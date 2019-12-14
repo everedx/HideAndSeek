@@ -19,7 +19,7 @@ public class AndroidTesting : MonoBehaviour
             // Debug.Log(Screen.width + " " + Screen.height);
             //Debug.Log(Camera.current.orthographicSize);
             Touch touch = Input.GetTouch(0);
-            //Debug.Log("X:"+touch.position.x + " Y:" + touch.position.y);
+            Debug.Log("X:" + touch.position.x + " Y:" + touch.position.y);
         }
     }
 }

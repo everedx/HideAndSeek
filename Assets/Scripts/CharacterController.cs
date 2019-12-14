@@ -34,7 +34,7 @@ public class CharacterController : MonoBehaviour
 
             xDistance = -xDistance / reductionFactor;
             yDistance = -yDistance / reductionFactor;
-            Debug.Log("X:"+ xDistance + " Y:"+ yDistance);
+            //Debug.Log("X:"+ xDistance + " Y:"+ yDistance);
             if (Mathf.Abs(xDistance) > 1)
             {
                 xDistance = (xDistance > 0) ?  1 : -1;
@@ -43,7 +43,7 @@ public class CharacterController : MonoBehaviour
             {
                 yDistance = (yDistance > 0) ? 1 : -1;
             }
-            Debug.Log("X:" + xDistance + " Y:" + yDistance);
+           // Debug.Log("X:" + xDistance + " Y:" + yDistance);
             Vector2 move = new Vector2(xDistance,yDistance);
 
             origin = origin + move * speed * Time.deltaTime;
