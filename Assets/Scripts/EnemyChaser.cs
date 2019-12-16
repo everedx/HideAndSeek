@@ -19,9 +19,21 @@ public class EnemyChaser : MonoBehaviour
         Left = 2,
         Down = 3
     };
+    public enum States
+    {
+        Patrolling = 0,
+        Chasing = 1,
+        ComingBack=2
+    }
+
     System.Random rnd;
 
+
+
+    public int DirToGo { get => dirToGo; }
     private int dirToGo;
+    public int State { get => state; set => state = value; }
+    private int state;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,16 +41,35 @@ public class EnemyChaser : MonoBehaviour
         iniPosition = rBody.position;
         rnd = new System.Random();
         dirToGo = rnd.Next(0, 4);
+        State = 0;
         //Debug.Log(dirToGo);
     }
 
     // Update is called once per frame
     void Update()
     {
+        switch (state)
+        {
+            case (int)States.Patrolling:
+                patrol();
+                break;
+            case (int)States.Chasing:
+                break;
+            case (int)States.ComingBack:
+                break;
+        }
+        
+        
+
+    }
+
+    private void patrol()
+    {
+        rBody.velocity = Vector2.zero;
         Vector2 lookDir = new Vector2(0, 0);
         Vector2 origin = transform.position;
         Vector2 move = new Vector2(0, 0);
-        Vector2 leftOffset = new Vector2(0,0);
+        Vector2 leftOffset = new Vector2(0, 0);
         Vector2 rightOffset = new Vector2(0, 0);
         // Vector2 lookDirDrw = new Vector2(0, 0);
         switch (dirToGo)
@@ -76,18 +107,15 @@ public class EnemyChaser : MonoBehaviour
         rBody.MovePosition(origin);
         //transform.rotation = Quaternion.Euler(0, 0, angle); 
         //Debug.DrawRay(rBody.position, lookDir, Color.red);
-        RaycastHit2D hit = Physics2D.Raycast(rBody.position, lookDir, 2f );
-        RaycastHit2D hitLeft = Physics2D.Raycast(rBody.position +leftOffset , lookDir, 2f);
-        RaycastHit2D hitRight = Physics2D.Raycast(rBody.position + rightOffset , lookDir, 2f);
+        RaycastHit2D hit = Physics2D.Raycast(rBody.position, lookDir, 2f);
+        RaycastHit2D hitLeft = Physics2D.Raycast(rBody.position + leftOffset, lookDir, 2f);
+        RaycastHit2D hitRight = Physics2D.Raycast(rBody.position + rightOffset, lookDir, 2f);
         if (hit.collider != null || hitLeft.collider != null || hitRight.collider != null)
         {
             //Change dir
-            dirToGo = GiveMeANumber(dirToGo,0,4);
+            dirToGo = GiveMeANumber(dirToGo, 0, 4);
         }
-
     }
-
-
 
     private int GiveMeANumber(int exclusion,int minim, int maxim)
     {

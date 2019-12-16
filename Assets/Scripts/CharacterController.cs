@@ -20,7 +20,7 @@ public class CharacterController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        rbody.velocity = Vector2.zero;
         // Handle screen touches.
         if (Input.touchCount > 0)
         {
