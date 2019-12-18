@@ -8,16 +8,20 @@ public class EnemySight : MonoBehaviour
     public float angleOfVision = 110.0f;
     public float distanceOfVision = 10.0f;
     private float angleOfDetection;
+    private bool seen;
     EnemyChaser eChaser;
+    CameraShader mainCamShader;
     // Start is called before the first frame update
     void Start()
     {
         eChaser = GetComponent<EnemyChaser>();
+        mainCamShader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShader>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        
         Vector3 enemyPos = transform.position;
         Vector3 heroPostion = GameObject.FindGameObjectWithTag("Player").transform.position;
 
@@ -34,18 +38,27 @@ public class EnemySight : MonoBehaviour
                     Debug.Log("DETECTED");
                     //eChaser.State = 1;
                     cAlert.enabled = true;
+                    if (seen == false)
+                        mainCamShader.changeEnemiesChasing(1);
+                    seen = true;
                 }
             }
             else
             {
                 cAlert.enabled = false;
                 // Debug.Log("No visible");
+                if(seen)
+                    mainCamShader.changeEnemiesChasing(-1);
+                seen = false;
             }
         }
         else
         {
             cAlert.enabled = false;
             //Debug.Log("No visible");
+            if (seen)
+                mainCamShader.changeEnemiesChasing(-1);
+            seen = false;
         }
 
     }
