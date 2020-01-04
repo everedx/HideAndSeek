@@ -10,6 +10,7 @@ public class CameraShader : MonoBehaviour
     public float vignetteSmoothness = 0.6f;
     public float vignetteEdgeRound = 8f;
 
+
     private bool growing;
     public float vignetteSize;
     private int enemiesChasing;
@@ -26,7 +27,6 @@ public class CameraShader : MonoBehaviour
 
     private void OnRenderImage(RenderTexture source, RenderTexture destination)
     {
-        
         material.SetFloat("u_vignette_size", vignetteSize);
         material.SetFloat("u_vignette_smoothness", vignetteSmoothness);
         material.SetFloat("u_vignette_edge_round", vignetteEdgeRound);

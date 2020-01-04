@@ -11,6 +11,9 @@ public class EnemyChaser : MonoBehaviour
     public float distanceToPatrol = 20.0f;
     public float speed = 5.0f;
     public float speedWhileChasing = 10.0f;
+    private int minTimePatrol, maxTimePatrol, timePatrol;
+    private float countChangeDirection;
+    private bool timePatrolSet;
     float angle;
     private enum Directions
     {
@@ -42,6 +45,10 @@ public class EnemyChaser : MonoBehaviour
         rnd = new System.Random();
         dirToGo = rnd.Next(0, 4);
         State = 0;
+        countChangeDirection = 0f;
+        minTimePatrol = 2;
+        maxTimePatrol = 5;
+        timePatrolSet = false;
         //Debug.Log(dirToGo);
     }
 
@@ -65,6 +72,7 @@ public class EnemyChaser : MonoBehaviour
 
     private void patrol()
     {
+        countChangeDirection += Time.deltaTime;
         rBody.velocity = Vector2.zero;
         Vector2 lookDir = new Vector2(0, 0);
         Vector2 origin = transform.position;
@@ -115,6 +123,18 @@ public class EnemyChaser : MonoBehaviour
             //Change dir
             dirToGo = GiveMeANumber(dirToGo, 0, 4);
         }
+        if (!timePatrolSet)
+        {
+            timePatrol = GiveMeANumber(maxTimePatrol + 2, minTimePatrol, maxTimePatrol + 1);
+            timePatrolSet = true;
+        }
+        if (timePatrolSet && timePatrol < countChangeDirection)
+        {
+            dirToGo = GiveMeANumber(dirToGo, 0, 4);
+            timePatrolSet = false;
+            countChangeDirection = 0;
+        }
+
     }
 
     private int GiveMeANumber(int exclusion,int minim, int maxim)
