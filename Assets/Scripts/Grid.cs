@@ -20,15 +20,16 @@ public class Grid : MonoBehaviour {
 
     [SerializeField] private int Width;
     [SerializeField] private int Height;
+    [SerializeField] private bool debugMode;
 	
 	public Node[,] Nodes;
-	
+	public Grid Instance { get { return this; } }
 	public int Left { get { return 0; } }
 	public int Right { get { return Width; } }
 	public int Bottom { get { return 0; } }
 	public int Top { get { return Height; } }
 
-	public const float UnitSize = 3f;
+	public const float UnitSize = 1f;
 
 	private LineRenderer LineRenderer;
 	GameObject Player;
@@ -97,7 +98,7 @@ public class Grid : MonoBehaviour {
                     pty = (int)fromPosition.y - (y) * (UnitSize / 2f); //- (UnitSize*2 );
                 }
                 Vector2 pos = new Vector2(ptx, pty);
-                Node node = new Node(x*2 + offsetx, y, pos, this);
+                Node node = new Node(x*2 + offsetx, y, pos, this,debugMode);
                 Nodes[x * 2 + offsetx, y] = node;
                 matrixIndexX++;
             }
@@ -340,45 +341,45 @@ public class Grid : MonoBehaviour {
 	}
 
 
-	void Update()
-	{
-		//Pathfinding demo
-		if(Input.GetMouseButtonDown(0))
-		{
-			//Convert mouse click point to grid coordinates
-			Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-			Point gridPos = GetClosestNode(Nodes,new Vector2(worldPos.x,worldPos.y) );
+	//void Update()
+	//{
+	//	//Pathfinding demo
+	//	if(Input.GetMouseButtonDown(0))
+	//	{
+	//		//Convert mouse click point to grid coordinates
+	//		Vector2 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+	//		Point gridPos = GetClosestNode(Nodes,new Vector2(worldPos.x,worldPos.y) );
 
-			if (gridPos != null) {						
+	//		if (gridPos != null) {						
 				
-				//if (gridPos.X > 0 && gridPos.Y > 0 && gridPos.X < Width && gridPos.Y < Height) {
+	//			//if (gridPos.X > 0 && gridPos.Y > 0 && gridPos.X < Width && gridPos.Y < Height) {
 
-					//Convert player point to grid coordinates
-					Point playerPos = GetClosestNode (Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);					
-					Nodes[playerPos.X, playerPos.Y].SetColor(Color.blue);
+	//				//Convert player point to grid coordinates
+	//				Point playerPos = GetClosestNode (Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);					
+	//				Nodes[playerPos.X, playerPos.Y].SetColor(Color.blue);
 
-					//Find path from player to clicked position
-					BreadCrumb bc = PathFinder.FindPath (this, playerPos, gridPos);
+	//				//Find path from player to clicked position
+	//				BreadCrumb bc = PathFinder.FindPath (this, playerPos, gridPos);
 
-					int count = 0;		
-					LineRenderer lr = GameObject.FindGameObjectWithTag("Player").GetComponent<LineRenderer> ();
-					lr.positionCount =100;  //Need a higher number than 2, or crashes out
-                    lr.startWidth = 0.1f;
-                    lr.endWidth = 0.1f;
-                    lr.startColor = Color.yellow;
-                    lr.endColor = Color.yellow;
+	//				int count = 0;		
+	//				LineRenderer lr = GameObject.FindGameObjectWithTag("Player").GetComponent<LineRenderer> ();
+	//				lr.positionCount =100;  //Need a higher number than 2, or crashes out
+ //                   lr.startWidth = 0.1f;
+ //                   lr.endWidth = 0.1f;
+ //                   lr.startColor = Color.yellow;
+ //                   lr.endColor = Color.yellow;
 
-                    //Draw out our path
-                    while (bc != null) {					
-						lr.SetPosition(count, GridToWorld(bc.position));
-						bc = bc.next;
-						count += 1;
-					}
-					lr.positionCount = count;					
-				//}				
-			}
-		}
-	}
+ //                   //Draw out our path
+ //                   while (bc != null) {					
+	//					lr.SetPosition(count, GridToWorld(bc.position));
+	//					bc = bc.next;
+	//					count += 1;
+	//				}
+	//				lr.positionCount = count;					
+	//			//}				
+	//		}
+	//	}
+	//}
 
 }
 

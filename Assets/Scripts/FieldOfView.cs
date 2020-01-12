@@ -53,7 +53,7 @@ public class FieldOfView : MonoBehaviour
         {
             Vector3 vertex;
 
-            RaycastHit2D rayCastHit2D = Physics2D.Raycast(origin, getVectorFromAngle(angle), viewDistance);
+            RaycastHit2D rayCastHit2D = Physics2D.Raycast(origin, getVectorFromAngle(angle), viewDistance,LayerMask.GetMask("Walls","Player"));
             if (rayCastHit2D.collider == null)
             {
                 vertex = origin + getVectorFromAngle(angle) * viewDistance;
@@ -85,17 +85,21 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+        mesh.bounds = new Bounds(origin,Vector3.one*1000);
 
         if (seenTemp == true)
         {
-            eChaser.State = 1;
+            eChaser.State = EnemyChaser.States.Chasing;
+            eChaser.playerDetected = true;
             if (seenFinal == false)
                  mainCamShader.changeEnemiesChasing(1);
-             seenFinal = true;
+            seenFinal = true;
+            eChaser.WorldPosPlayer = GameObject.FindGameObjectWithTag("Player").transform.position;
         }
         else
         {
-            eChaser.State = 0;
+            //eChaser.State = 0;
+            eChaser.playerDetected = false;
             if (seenFinal == true)
                 mainCamShader.changeEnemiesChasing(-1);
             seenFinal = false;
@@ -122,7 +126,7 @@ public class FieldOfView : MonoBehaviour
     }
 
 
-    private Vector3 getVectorFromAngle(float angle) 
+    public Vector3 getVectorFromAngle(float angle) 
     {
         float angleRad = angle * (Mathf.PI / 180f);
         return new Vector3(Mathf.Cos(angleRad),Mathf.Sin(angleRad));

@@ -98,7 +98,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distanceToPatrol: 20
   speed: 5
-  speedWhileChasing: 10
+  speedWhileChasing: 8
+  playerDetected: 0
 --- !u!50 &1912528291624484273
 Rigidbody2D:
   serializedVersion: 4

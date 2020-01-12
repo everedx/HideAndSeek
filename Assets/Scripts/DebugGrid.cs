@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Debug : MonoBehaviour {
+public class DebugGrid : MonoBehaviour {
 
 	public int X;
 	public int Y;

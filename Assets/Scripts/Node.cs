@@ -24,12 +24,12 @@ public class Node {
 	
 	GameObject Debug;
 	
-	public Node(float x, float y, Vector2 position, Grid grid)
+	public Node(float x, float y, Vector2 position, Grid grid,bool debugMode)
 	{
-		Initialize(x, y, position, grid);
+		Initialize(x, y, position, grid,debugMode);
 	}
 	
-	public void Initialize(float x, float y, Vector2 position, Grid grid)
+	public void Initialize(float x, float y, Vector2 position, Grid grid,bool debugMode)
 	{
 		X = (int)x;
 		Y = (int)y;
@@ -61,8 +61,10 @@ public class Node {
         //Draw Node on screen for debugging purposes
         Debug = GameObject.Instantiate(Resources.Load("Node")) as GameObject; 
 		Debug.transform.position = Position;
-		Debug.GetComponent<Debug> ().X = X;
-		Debug.GetComponent<Debug> ().Y = Y;
+		Debug.GetComponent<DebugGrid> ().X = X;
+		Debug.GetComponent<DebugGrid> ().Y = Y;
+        if (!debugMode)
+            Debug.GetComponent<SpriteRenderer>().enabled = false;
 	}
 
 	public void SetColor(Color color)
@@ -177,7 +179,7 @@ public class Node {
 		bool valid = true;
 		RaycastHit2D hit;
 		float diagonalDistance = Mathf.Sqrt (Mathf.Pow (Grid.UnitSize/2f, 2) + Mathf.Pow (Grid.UnitSize/2f, 2));
-        UnityEngine.Debug.Log(X + " " +Y);
+       // UnityEngine.Debug.Log(X + " " +Y);
 
 		if (X > 1)
 		{	
@@ -203,7 +205,7 @@ public class Node {
 			}
 
 			//BottomLeft
-			if (Y < grid.Top - 1)
+			if (Y < 2*grid.Top - 1)
 			{
 				valid = true;
 				hit = Physics2D.Raycast(Position, new Vector2(-1, -1), diagonalDistance);
@@ -239,7 +241,7 @@ public class Node {
 			}
 			
 			//BottomRight
-			if (Y < grid.Top - 1)
+			if (Y < 2*grid.Top - 1)
 			{
 				valid = true;
 				hit = Physics2D.Raycast(Position, new Vector2(1, -1), diagonalDistance);
@@ -264,7 +266,7 @@ public class Node {
 		}
 
 
-		if (Y < grid.Top - 2)
+		if (Y < 2*grid.Top - 2)
 		{
 			valid = true;
 			hit = Physics2D.Raycast(Position, new Vector2(0, -1), Grid.UnitSize);

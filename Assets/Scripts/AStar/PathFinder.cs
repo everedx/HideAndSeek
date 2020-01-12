@@ -39,8 +39,10 @@ public static class PathFinder
 	private static BreadCrumb FindPathReversed(Grid world, Point start, Point end)
 	{
 	    MinHeap<BreadCrumb> openList = new MinHeap<BreadCrumb>(256);
-	    BreadCrumb[,] brWorld = new BreadCrumb[world.Right, world.Top];
-	    BreadCrumb node;
+	    BreadCrumb[,] brWorld = new BreadCrumb[2*world.Right+2, 2*world.Top+3];
+       
+
+        BreadCrumb node;
 	    Point tmp;
 	    int cost;
 	    int diff;
@@ -76,7 +78,7 @@ public static class PathFinder
                 {
                     node = brWorld[tmp.X, tmp.Y];
                 }
-
+               // Debug.Log(node.position.X + " " + node.position.Y);
                 //If the node is not on the 'closedList' check it's new score, keep the best
                 if (!node.onClosedList)
                 {
