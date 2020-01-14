@@ -65,8 +65,11 @@ public static class PathFinder
 	        {
                 tmp = new Point(current.position.X + surrounding[i].X, current.position.Y + surrounding[i].Y);
 
-                if (!world.ConnectionIsValid(current.position, tmp)) 
-                    continue;                				                  
+                if (!world.ConnectionIsValid(current.position, tmp))
+                    continue;
+                
+                
+                                 				                  
 
                 //Check if we've already examined a neighbour, if not create a new node for it.
                 if (brWorld[tmp.X, tmp.Y] == null)
@@ -91,9 +94,10 @@ public static class PathFinder
                     {
                         diff += 1;
                     }
+              
 
-					int distance = (int)Mathf.Pow(Mathf.Max(Mathf.Abs (end.X - node.position.X), Mathf.Abs(end.Y - node.position.Y)), 2);
-                    cost = current.cost + diff + distance;
+                    int distance = (int)Mathf.Pow(Mathf.Max(Mathf.Abs (end.X - node.position.X- surrounding[i].X/2), Mathf.Abs(end.Y - node.position.Y- surrounding[i].Y / 2)), 2);
+                    cost = current.cost + diff+ distance;
 
                     if (cost < node.cost)
                     {

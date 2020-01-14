@@ -24,7 +24,7 @@ public class EnemyChaser : MonoBehaviour
     bool needToChangePoint;
     bool firstStep;
     Vector2 nextPoint;
-    private float countChasePath;
+    private bool forceNext;
     Point PlayerPrevPos;
     private Vector2 worldPosPlayer;
 
@@ -57,7 +57,8 @@ public class EnemyChaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        countChasePath = 0;
+        //countChasePath = 0;
+        forceNext = false;
         rBody = GetComponent<Rigidbody2D>();
         iniPosition = rBody.position;
         rnd = new System.Random();
@@ -72,7 +73,7 @@ public class EnemyChaser : MonoBehaviour
         grd = pathFinderObject.GetComponent<Grid>().Instance;
         needToChangePoint = false;
         //Debug.Log(dirToGo);
-        PlayerPrevPos = grd.GetClosestNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
+        PlayerPrevPos = grd.GetClosestGoodNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
     }
 
     // Update is called once per frame
@@ -166,65 +167,9 @@ public class EnemyChaser : MonoBehaviour
     private void chase()
     {
         Vector2 origin = transform.position;
-        //// countChasePath += Time.deltaTime;
-        // if (playerDetected ) //If the enemy sees the player, follows him updating the place where he is
-        // {
-
-        //     playerDetected = true;
-        //     Point gridPosPlayer = grd.GetClosestNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
-        //     Point gridPosThisEnemy = grd.GetClosestNode(grd.Nodes, gameObject.transform.position);
-        //     worldPosPlayer = grd.GridToWorld(gridPosPlayer);
-        //     if (!(PlayerPrevPos.X == gridPosPlayer.X && PlayerPrevPos.Y == gridPosPlayer.Y) || bc == null)
-        //     {
-        //         bc = PathFinder.FindPath(grd, gridPosThisEnemy, gridPosPlayer);
-        //         needToChangePoint = true;
-        //     }
-        //     else
-        //         needToChangePoint = false;
-
-        //     //countChasePath = 0;
-        // }
-        // else
-        //     needToChangePoint = false;
-
-
-        // //Check if we are toching next point, if we do, we need to get the next point (Done in the OnCollisionEnter2D)
-        // if(bc!=null)
-        //     if (Vector2.Distance(transform.position, grd.GridToWorld(bc.position)) < Grid.UnitSize)
-        //     {
-        //         needToChangePoint = true;
-        //     }
-
-        // //Get next point if we already got there
-        // if (bc != null && needToChangePoint)
-        // {
-        //     nextPoint = grd.GridToWorld(bc.position);
-        //     bc = bc.next;
-
-        // }
-
-        // //move in the direction of the nextPoint
-        // Vector2 origin = transform.position;
-        // if (transform.position.x == nextPoint.x && transform.position.y == nextPoint.y)
-        // {
-        //     nextPoint = grd.GridToWorld(bc.position);
-        //     bc = bc.next;
-        // }
-        // float xDistance = transform.position.x - nextPoint.x; //If positive, we need to go left
-        // float yDistance = transform.position.y - nextPoint.y; //If positive we need to go down
-
-
-        // xDistance = (xDistance > 0) ? 1 : -1;
-        // yDistance = (yDistance > 0) ? 1 : -1;
-
-
-        // Vector2 move = new Vector2(-xDistance, -yDistance);
-        // origin = origin + move *speedWhileChasing* Time.deltaTime;
-        // rBody.MovePosition(origin);
-        // PlayerPrevPos = grd.GetClosestNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
-
-        Point gridPosPlayer = grd.GetClosestNode(grd.Nodes, worldPosPlayer);
-        Point gridPosThisEnemy = grd.GetClosestNode(grd.Nodes, gameObject.transform.position);
+        PlayerPrevPos = grd.GetClosestGoodNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
+        Point gridPosPlayer = grd.GetClosestGoodNode(grd.Nodes, worldPosPlayer);
+        Point gridPosThisEnemy = grd.GetClosestGoodNode(grd.Nodes, gameObject.transform.position);
         if (!(PlayerPrevPos.X == gridPosPlayer.X && PlayerPrevPos.Y == gridPosPlayer.Y) || bc == null)
         {
             bc = PathFinder.FindPath(grd, gridPosThisEnemy, gridPosPlayer);
@@ -236,34 +181,81 @@ public class EnemyChaser : MonoBehaviour
             firstStep = false;
             needToChangePoint = false;
         }
-        if (needToChangePoint)
+
+
+        if (bc != null)
         {
-            if (bc != null)
+            if (needToChangePoint || forceNext)
             {
-                nextPoint = grd.GridToWorld(bc.position);
-                bc = bc.next;
-                if (firstStep)
+                if (bc != null)
                 {
                     nextPoint = grd.GridToWorld(bc.position);
                     bc = bc.next;
+                    if (firstStep)
+                    {
+                        nextPoint = grd.GridToWorld(bc.position);
+                        bc = bc.next;
+                    }
                 }
             }
+
+
+
+
+            float xDistance = transform.position.x - nextPoint.x; //If positive, we need to go left
+            float yDistance = transform.position.y - nextPoint.y; //If positive we need to go down
+
+            if (Mathf.Abs(xDistance) <= 0.5f && Mathf.Abs(yDistance) <= 0.5f)
+            {
+                xDistance = (xDistance > 0) ? 1 : -1;
+                yDistance = (yDistance > 0) ? 1 : -1;
+            }
+            else
+            {
+                if (Mathf.Abs(xDistance) > 0.5f)
+                    xDistance = (xDistance > 0) ? 1 : -1;
+                else
+                    xDistance = 0;
+                if (Mathf.Abs(yDistance) > 0.5f)
+                    yDistance = (yDistance > 0) ? 1 : -1;
+                else
+                    yDistance = 0;
+            }
+            
+
+
+            Vector2 move = new Vector2(-xDistance, -yDistance);
+            origin = origin + move * speedWhileChasing * Time.deltaTime;
+            rBody.MovePosition(origin);
+            if ((transform.position.x >= nextPoint.x - 0.5f || transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y-0.5f || transform.position.y <= nextPoint.y + 0.5f))
+            {
+                forceNext = true;
+            }
+            else
+                forceNext = false;
         }
+        else
+        {
+            forceNext = false;
+        }
+        ///
+        //////int count = 0;
+        //////LineRenderer lr = GameObject.FindGameObjectWithTag("Pathfinder").GetComponent<LineRenderer>();
+        //////lr.positionCount = 100;  //Need a higher number than 2, or crashes out
+        //////lr.startWidth = 0.1f;
+        //////lr.endWidth = 0.1f;
+        //////lr.startColor = Color.yellow;
+        //////lr.endColor = Color.yellow;
 
-        Debug.Log(nextPoint.x + " " + nextPoint.y);
+        ////////Draw out our path
+        //////while (bc != null)
+        //////{
+        //////    lr.SetPosition(count, grd.GridToWorld(bc.position));
+        //////    bc = bc.next;
+        //////    count += 1;
+        //////}
+        //////lr.positionCount = count;
 
-
-        float xDistance = transform.position.x - nextPoint.x; //If positive, we need to go left
-        float yDistance = transform.position.y - nextPoint.y; //If positive we need to go down
-
-
-        xDistance = (xDistance > 0) ? 1 : -1;
-        yDistance = (yDistance > 0) ? 1 : -1;
-
-
-        Vector2 move = new Vector2(-xDistance, -yDistance);
-        origin = origin + move * speedWhileChasing * Time.deltaTime;
-        rBody.MovePosition(origin);
     }
 
     private void OnCollisionStay2D(Collision2D collision)

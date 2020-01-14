@@ -178,17 +178,18 @@ public class Node {
 	{
 		bool valid = true;
 		RaycastHit2D hit;
-		float diagonalDistance = Mathf.Sqrt (Mathf.Pow (Grid.UnitSize/2f, 2) + Mathf.Pow (Grid.UnitSize/2f, 2));
-       // UnityEngine.Debug.Log(X + " " +Y);
-
+		float diagonalDistance = Mathf.Sqrt (Mathf.Pow (Grid.unitWidth/2f, 2) + Mathf.Pow (Grid.unitWidth/2f, 2));
+        // UnityEngine.Debug.Log(X + " " +Y);
+        bool validNodeWall = true;
 		if (X > 1)
 		{	
 			//Left
 			valid = true;
-			hit = Physics2D.Raycast(Position, new Vector2(-1, 0), Grid.UnitSize);
+			hit = Physics2D.Raycast(Position, new Vector2(-1, 0), Grid.pointSpace);
 			if (hit.collider != null && hit.collider.tag == "Walls")
 			{
-				valid = false;
+                validNodeWall = false;
+                valid = false;
 			}
 			Left = new NodeConnection(this, grid.Nodes[X - 2, Y], valid);
 
@@ -199,7 +200,8 @@ public class Node {
 				hit = Physics2D.Raycast(Position, new Vector2(-1, 1), diagonalDistance);
 				if (hit.collider != null && hit.collider.tag == "Walls")
 				{
-					valid = false;
+                    validNodeWall = false;
+                    valid = false;
 				}
 				TopLeft = new NodeConnection(this, grid.Nodes[X - 1, Y - 1], valid);
 			}
@@ -211,7 +213,8 @@ public class Node {
 				hit = Physics2D.Raycast(Position, new Vector2(-1, -1), diagonalDistance);
 				if (hit.collider != null && hit.collider.tag == "Walls")
 				{
-					valid = false;
+                    validNodeWall = false;
+                    valid = false;
 				}			
 				BottomLeft = new NodeConnection(this,grid.Nodes[X - 1, Y + 1], valid);
 			}
@@ -221,10 +224,11 @@ public class Node {
 		if (X < grid.Right - 2)
 		{
 			valid = true;
-			hit = Physics2D.Raycast(Position, new Vector2(1, 0), Grid.UnitSize);
+			hit = Physics2D.Raycast(Position, new Vector2(1, 0), Grid.pointSpace);
 			if (hit.collider != null && hit.collider.tag == "Walls")
 			{
-				valid = false;
+                validNodeWall = false;
+                valid = false;
 			}
 			Right = new NodeConnection(this,grid.Nodes[X + 2, Y], valid);
 
@@ -235,7 +239,8 @@ public class Node {
 				hit = Physics2D.Raycast(Position, new Vector2(1, 1), diagonalDistance);
 				if (hit.collider != null && hit.collider.tag == "Walls")
 				{
-					valid = false;
+                    validNodeWall = false;
+                    valid = false;
 				}
 				TopRight = new NodeConnection(this,grid.Nodes[X + 1, Y - 1], valid);
 			}
@@ -247,7 +252,8 @@ public class Node {
 				hit = Physics2D.Raycast(Position, new Vector2(1, -1), diagonalDistance);
 				if (hit.collider != null && hit.collider.tag == "Walls")
 				{
-					valid = false;
+                    validNodeWall = false;
+                    valid = false;
 				}
 				BottomRight = new NodeConnection(this,grid.Nodes[X + 1, Y + 1], valid);
 			}
@@ -257,10 +263,11 @@ public class Node {
 		if (Y - 1 > 0)
 		{
 			valid = true;
-			hit = Physics2D.Raycast(Position, new Vector2(0, 1), Grid.UnitSize);
+			hit = Physics2D.Raycast(Position, new Vector2(0, 1), Grid.pointSpace);
 			if (hit.collider != null && hit.collider.tag == "Walls")
 			{
-				valid = false;
+                validNodeWall = false;
+                valid = false;
 			}			
 			Top = new NodeConnection(this,grid.Nodes[X, Y - 2], valid);
 		}
@@ -269,13 +276,17 @@ public class Node {
 		if (Y < 2*grid.Top - 2)
 		{
 			valid = true;
-			hit = Physics2D.Raycast(Position, new Vector2(0, -1), Grid.UnitSize);
+			hit = Physics2D.Raycast(Position, new Vector2(0, -1), Grid.pointSpace);
 			if (hit.collider != null && hit.collider.tag == "Walls")
 			{
-				valid = false;
+                validNodeWall = false;
+                valid = false;
 			}						
 			Bottom = new NodeConnection(this,grid.Nodes[X, Y + 2], valid);
 		}
+
+        if (!validNodeWall)
+            BadNode = true;
 	}
 
 

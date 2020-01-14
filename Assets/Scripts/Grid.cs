@@ -29,9 +29,10 @@ public class Grid : MonoBehaviour {
 	public int Bottom { get { return 0; } }
 	public int Top { get { return Height; } }
 
-	public const float UnitSize = 1f;
+	public const float pointSpace = 1f;
+    public const float unitWidth = 2.56f;
 
-	private LineRenderer LineRenderer;
+    private LineRenderer LineRenderer;
 	GameObject Player;
 
 	void Awake () 
@@ -88,14 +89,14 @@ public class Grid : MonoBehaviour {
                 int offsetx = 0;
                 if (y % 2 == 0)
                 {
-                    pty = (int)fromPosition.y - (y) * (UnitSize / 2f);
-                    ptx = (int)fromPosition.x+ x*UnitSize + (UnitSize / 2f);
+                    pty = (int)fromPosition.y - (y) * (pointSpace / 2f);
+                    ptx = (int)fromPosition.x+ x*pointSpace + (pointSpace / 2f);
                     offsetx = 1;
                 }
                 else
                 {
-                    ptx = (int)fromPosition.x + x * UnitSize;
-                    pty = (int)fromPosition.y - (y) * (UnitSize / 2f); //- (UnitSize*2 );
+                    ptx = (int)fromPosition.x + x * pointSpace;
+                    pty = (int)fromPosition.y - (y) * (pointSpace / 2f); //- (UnitSize*2 );
                 }
                 Vector2 pos = new Vector2(ptx, pty);
                 Node node = new Node(x*2 + offsetx, y, pos, this,debugMode);
@@ -136,7 +137,7 @@ public class Grid : MonoBehaviour {
                     continue;
 
                 Nodes[xi, yi].CheckConnectionsPass2();
-                //Nodes[xi, yi].DrawConnections ();	//debug
+               // Nodes[xi, yi].DrawConnections ();	//debug
             }
         }
     }
@@ -162,6 +163,32 @@ public class Grid : MonoBehaviour {
        //}
         return new Point(tMin.X,tMin.Y);
     }
+    public Point GetClosestGoodNode(Node[,] nodes, Vector2 pos)
+    {
+        Node tMin = null;
+        float minDist = Mathf.Infinity;
+        Vector3 currentPos = pos;
+        //foreach (Node[] tArray in nodes)
+        //{
+        foreach (Node t in nodes)
+        {
+
+            if (t == null)
+                continue;
+            float dist = Vector3.Distance(t.Position, currentPos);
+            if (dist < minDist)
+            {
+                if (!t.BadNode)
+                {
+                    tMin = t;
+                    minDist = dist;
+                }
+            }
+        }
+        //}
+        return new Point(tMin.X, tMin.Y);
+    }
+
 
     public Point WorldToGrid(Vector2 worldPosition)
 	{
