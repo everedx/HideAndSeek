@@ -8,6 +8,7 @@ public class EnemySight : MonoBehaviour
     private FieldOfView fieldOfView;
     [SerializeField] private GameObject fovPrefab;
     private EnemyChaser eChase;
+    private Vector2 vec;
 
     private void Start()
     {
@@ -19,7 +20,7 @@ public class EnemySight : MonoBehaviour
     private void LateUpdate()
     {
         fieldOfView.setOrigin(transform.position);
-        if (eChase.State == (int)EnemyChaser.States.Patrolling)
+        if (eChase.State == EnemyChaser.States.LookingForPlayer)
         {
             switch (eChase.DirToGo)
             {
@@ -40,11 +41,23 @@ public class EnemySight : MonoBehaviour
 
         if (eChase.State == EnemyChaser.States.Chasing)
         {
-            float angle = Vector2.SignedAngle(Vector2.right,new Vector2( eChase.WorldPosPlayer.x-transform.position.x, eChase.WorldPosPlayer.y - transform.position.y))+90;
+            vec = new Vector2(eChase.WorldPosPlayer.x - transform.position.x, eChase.WorldPosPlayer.y - transform.position.y);
+            float angle = Vector2.SignedAngle(Vector2.right,vec)+90;
             fieldOfView.setAimDirection(fieldOfView.getVectorFromAngle(angle));
         }
 
+        if (eChase.State == EnemyChaser.States.Patrolling || eChase.State == EnemyChaser.States.ComingBack)
+        {
+            float angle = Vector2.SignedAngle(Vector2.right, vec) + 90;
+            fieldOfView.setAimDirection(fieldOfView.getVectorFromAngle(angle));
+        }
+        
 
+    }
+
+    public void setAngle(Vector2 vec)
+    {
+        this.vec = vec;
     }
 
 

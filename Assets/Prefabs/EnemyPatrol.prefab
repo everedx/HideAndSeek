@@ -96,10 +96,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a0de9bc7708864799481b5a046e1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  distanceToPatrol: 20
   speed: 5
   speedWhileChasing: 8
   playerDetected: 0
+  patrolXDistance: 0
+  patrolYDistance: 0
+  secondsToGoBackToPatrol: 10
 --- !u!50 &1912528291624484273
 Rigidbody2D:
   serializedVersion: 4
