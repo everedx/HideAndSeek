@@ -12,6 +12,12 @@ public class FieldOfView : MonoBehaviour
     float angleIncrease;
     float viewDistance;
     private float startingAngle;
+    [SerializeField] private float adjustingSpeedInc;
+    [SerializeField] private float adjustingSpeedMax;
+    private float adjustingSpeed;
+    [SerializeField] private float adjustingOffset;
+    private bool increasing;
+
 
     GameObject spawner;
     EnemyChaser eChaser;
@@ -23,12 +29,16 @@ public class FieldOfView : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
+        adjustingSpeed = 0;
         mesh = new Mesh();
         GetComponent<MeshFilter>().mesh = mesh;
         origin = Vector3.zero;
 
         seenFinal = false;
         mainCamShader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShader>();
+        // adjustingSpeedMax = 3;
+        // adjustingSpeedInc = 0.1f;
+        increasing = true;
 
     }
     void Update(){
@@ -115,9 +125,39 @@ public class FieldOfView : MonoBehaviour
     public void setAimDirection(Vector3 aimDir)
     {
         startingAngle = getAngleFromVector(aimDir) - fov/2f;
+        adjustingSpeed = 0;
         //Debug.Log(startingAngle);
     }
 
+    public void waveAimDirection(Vector3 aimDir)
+    {
+        float ang = (getAngleFromVector(aimDir) - fov / 2f);
+        if (ang > startingAngle + adjustingOffset)
+        {
+            if (adjustingSpeed < adjustingSpeedMax)
+                adjustingSpeed += adjustingSpeedInc;
+            startingAngle = startingAngle + adjustingSpeed * Time.deltaTime * 100;
+            increasing = true;
+        }
+        else if (ang <= startingAngle - adjustingOffset)
+        {
+            if (adjustingSpeed > -adjustingSpeedMax)
+                adjustingSpeed -= adjustingSpeedInc;
+            startingAngle = startingAngle + adjustingSpeed * Time.deltaTime * 100;
+            increasing = false;
+        }
+        else
+        {
+            if (adjustingSpeed <= 0)
+                adjustingSpeed = -adjustingSpeedMax;
+            else
+                adjustingSpeed = adjustingSpeedMax;
+            startingAngle = startingAngle + adjustingSpeed * Time.deltaTime*100;
+        }
+        //startingAngle = startingAngle + adjustingSpeed;
+        //startingAngle = getAngleFromVector(aimDir) - fov / 2f;
+        //Debug.Log(startingAngle);
+    }
 
     public void setSpawner(GameObject spawner)
     {

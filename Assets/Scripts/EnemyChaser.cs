@@ -34,6 +34,8 @@ public class EnemyChaser : MonoBehaviour
     private Vector2 patrolDestination;
     private Vector2 patrolDepartingPosition;
     private bool patrolGoingToDestination;
+    Vector2 prevVector;
+    Vector2 currentVector;
 
     //ComeBack mode
     [SerializeField] private int secondsToGoBackToPatrol;
@@ -130,15 +132,16 @@ public class EnemyChaser : MonoBehaviour
             gridDestination = grd.GetClosestGoodNode(grd.Nodes, patrolDepartingPosition);
         }
 
-        if (gridDestination.X == gridPosThisEnemy.X && gridDestination.Y == gridPosThisEnemy.Y)
-        {
-            patrolGoingToDestination = !patrolGoingToDestination;
-            return;
-        }
+        //if (gridDestination.X == gridPosThisEnemy.X && gridDestination.Y == gridPosThisEnemy.Y)
+        //{
+        //    patrolGoingToDestination = !patrolGoingToDestination;
+        //    return;
+        //}
 
 
         if ( bc == null)
         {
+            patrolGoingToDestination = !patrolGoingToDestination;
             bc = PathFinder.FindPath(grd, gridPosThisEnemy, gridDestination);
             needToChangePoint = true;
             firstStep = true;
@@ -189,19 +192,49 @@ public class EnemyChaser : MonoBehaviour
                     yDistance = 0;
             }
 
-
+            
 
             Vector2 move = new Vector2(-xDistance, -yDistance);
-            gameObject.GetComponent<EnemySight>().setAngle(move);
-
+            currentVector = move;
+            
+            
             origin = origin + move * speed * Time.deltaTime;
             rBody.MovePosition(origin);
-            if ((transform.position.x >= nextPoint.x - 0.5f || transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y - 0.5f || transform.position.y <= nextPoint.y + 0.5f))
+            if (firstStep)
+            {
+                gameObject.GetComponent<EnemySight>().setAngle(move,true);
+            }
+            else
+            {
+                gameObject.GetComponent<EnemySight>().setAngle(move,false);
+            }
+            
+            Point enemylocation = grd.GetClosestGoodNode(grd.Nodes, transform.position);
+            Point nextPointLocation = grd.GetClosestGoodNode(grd.Nodes, new Vector2(nextPoint.x, nextPoint.y));
+
+            //if (enemylocation.X == nextPointLocation.X && enemylocation.Y == nextPointLocation.Y)
+            //{
+            //    forceNext = true;
+            //}
+            //else
+            //    forceNext = false;
+
+
+
+            //if ((prevVector != null) && (((prevVector.x < 0 && currentVector.x > 0) || (prevVector.x > 0 && currentVector.x < 0)) || ((prevVector.y < 0 && currentVector.y > 0) || (prevVector.y > 0 && currentVector.y < 0))))
+            //{
+            //    forceNext = true;
+            //}
+            //else
+            //    forceNext = false;
+
+            if ((transform.position.x >= nextPoint.x - 0.5f && transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y - 0.5f && transform.position.y <= nextPoint.y + 0.5f))
             {
                 forceNext = true;
             }
             else
                 forceNext = false;
+            prevVector = currentVector;
         }
         else
         {
@@ -441,7 +474,7 @@ public class EnemyChaser : MonoBehaviour
 
             Vector2 move = new Vector2(-xDistance, -yDistance);
             
-            gameObject.GetComponent<EnemySight>().setAngle(new Vector2(patrolDepartingPosition.x-transform.position.x, patrolDepartingPosition.y - transform.position.y));
+            gameObject.GetComponent<EnemySight>().setAngle(new Vector2(patrolDepartingPosition.x-transform.position.x, patrolDepartingPosition.y - transform.position.y),false);
             origin = origin + move * speed/2 * Time.deltaTime;
             rBody.MovePosition(origin);
             if ((transform.position.x >= nextPoint.x - 0.5f || transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y - 0.5f || transform.position.y <= nextPoint.y + 0.5f))

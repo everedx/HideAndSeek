@@ -135,17 +135,17 @@ PrefabInstance:
     - target: {fileID: 1912528291624484274, guid: 99ebd675f9d34844f8f668c0cbc8f65f,
         type: 3}
       propertyPath: patrolYDistance
-      value: 0
+      value: -10
       objectReference: {fileID: 0}
     - target: {fileID: 1912528291624484275, guid: 99ebd675f9d34844f8f668c0cbc8f65f,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -24.3
+      value: -23.95
       objectReference: {fileID: 0}
     - target: {fileID: 1912528291624484275, guid: 99ebd675f9d34844f8f668c0cbc8f65f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 23.1
+      value: 22.71
       objectReference: {fileID: 0}
     - target: {fileID: 1912528291624484275, guid: 99ebd675f9d34844f8f668c0cbc8f65f,
         type: 3}

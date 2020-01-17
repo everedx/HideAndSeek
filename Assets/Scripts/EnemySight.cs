@@ -49,15 +49,21 @@ public class EnemySight : MonoBehaviour
         if (eChase.State == EnemyChaser.States.Patrolling || eChase.State == EnemyChaser.States.ComingBack)
         {
             float angle = Vector2.SignedAngle(Vector2.right, vec) + 90;
-            fieldOfView.setAimDirection(fieldOfView.getVectorFromAngle(angle));
+            fieldOfView.waveAimDirection(fieldOfView.getVectorFromAngle(angle));
         }
         
 
     }
 
-    public void setAngle(Vector2 vec)
+    public void setAngle(Vector2 vec,bool doInstant)
     {
         this.vec = vec;
+        if (doInstant)
+        {
+            float angle = Vector2.SignedAngle(Vector2.right, vec) + 90;
+            fieldOfView.setAimDirection(fieldOfView.getVectorFromAngle(angle));
+        }
+        
     }
 
 
