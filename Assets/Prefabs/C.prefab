@@ -97,6 +97,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_OrthographicCamera: {fileID: 0}
   speed: 7.5
+  touch: {fileID: 1571421287063066783, guid: 434811425595ba343acefaf77d7652b4, type: 3}
+  threshold: {fileID: 1355383557385215854, guid: b679b360e91644e439dbb708f9e7ec6c,
+    type: 3}
 --- !u!50 &1443449905498634577
 Rigidbody2D:
   serializedVersion: 4

@@ -97,7 +97,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
-  speedWhileChasing: 8
+  speedWhileChasing: 7.5
   playerDetected: 0
   patrolXDistance: 0
   patrolYDistance: 0

@@ -42,9 +42,9 @@ public class Node {
             DisableConnections();
             BadNode = true;
         }
-      
-        
- 
+
+
+
         //if (Position.x > grid.transform.position.x + grid.transform.localScale.x)
         //{
         //	DisableConnections ();
@@ -59,17 +59,20 @@ public class Node {
         //else
         //    UnityEngine.Debug.Log("Good");
         //Draw Node on screen for debugging purposes
-        Debug = GameObject.Instantiate(Resources.Load("Node")) as GameObject; 
-		Debug.transform.position = Position;
-		Debug.GetComponent<DebugGrid> ().X = X;
-		Debug.GetComponent<DebugGrid> ().Y = Y;
-        if (!debugMode)
-            Debug.GetComponent<SpriteRenderer>().enabled = false;
-	}
+
+        if (debugMode)
+        //Debug.GetComponent<SpriteRenderer>().enabled = false;
+        {
+            Debug = GameObject.Instantiate(Resources.Load("Node")) as GameObject;
+            Debug.transform.position = Position;
+            Debug.GetComponent<DebugGrid>().X = X;
+            Debug.GetComponent<DebugGrid>().Y = Y;
+        } 
+    }
 
 	public void SetColor(Color color)
 	{
-		Debug.transform.GetComponent<SpriteRenderer> ().color = color;
+		//Debug.transform.GetComponent<SpriteRenderer> ().color = color; Debug
 	}
 
 	//Cull nodes if they don't have enough valid connection points (3)
