@@ -8,7 +8,9 @@ public class EnemyChaser : MonoBehaviour
 
     Rigidbody2D rBody;
     Vector2 iniPosition;
-    
+    CameraShader mainCamShader;
+
+
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float speedWhileChasing = 6.5f;
     private int minTimePatrol, maxTimePatrol, timePatrol;
@@ -27,6 +29,7 @@ public class EnemyChaser : MonoBehaviour
     private bool forceNext;
     Point PlayerPrevPos;
     private Vector2 worldPosPlayer;
+    private States prevState;
 
     //Patrol mode variables
     [SerializeField] private float patrolXDistance;
@@ -90,6 +93,8 @@ public class EnemyChaser : MonoBehaviour
         patrolDepartingPosition = transform.position;
         patrolDestination = new Vector2(transform.position.x + patrolXDistance, transform.position.y + patrolYDistance);
         patrolGoingToDestination = true;
+        mainCamShader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShader>();
+        prevState = States.Patrolling;
     }
 
     // Update is called once per frame
@@ -99,18 +104,25 @@ public class EnemyChaser : MonoBehaviour
         {
             case States.Patrolling:
                 patrol();
+                prevState = state;
                 break;
             case States.Chasing:
+                if(prevState == States.Patrolling || prevState == States.ComingBack)
+                    mainCamShader.changeEnemiesChasing(1);
+                prevState = state;
                 chase();
                 break;
             case States.ComingBack:
+                if (prevState == States.LookingForPlayer)
+                    mainCamShader.changeEnemiesChasing(-1);
+                prevState = state;
                 comeBack();
                 break;
             case States.LookingForPlayer:
+                prevState = state;
                 lookForPlayerRandomly();
                 break;
         }
-        
         
 
     }
@@ -212,21 +224,6 @@ public class EnemyChaser : MonoBehaviour
             Point enemylocation = grd.GetClosestGoodNode(grd.Nodes, transform.position);
             Point nextPointLocation = grd.GetClosestGoodNode(grd.Nodes, new Vector2(nextPoint.x, nextPoint.y));
 
-            //if (enemylocation.X == nextPointLocation.X && enemylocation.Y == nextPointLocation.Y)
-            //{
-            //    forceNext = true;
-            //}
-            //else
-            //    forceNext = false;
-
-
-
-            //if ((prevVector != null) && (((prevVector.x < 0 && currentVector.x > 0) || (prevVector.x > 0 && currentVector.x < 0)) || ((prevVector.y < 0 && currentVector.y > 0) || (prevVector.y > 0 && currentVector.y < 0))))
-            //{
-            //    forceNext = true;
-            //}
-            //else
-            //    forceNext = false;
 
             if ((transform.position.x >= nextPoint.x - 0.5f && transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y - 0.5f && transform.position.y <= nextPoint.y + 0.5f))
             {
@@ -411,15 +408,11 @@ public class EnemyChaser : MonoBehaviour
 
  
 
-        if (gridDestination.X == gridPosThisEnemy.X && gridDestination.Y == gridPosThisEnemy.Y)
-        {
-            state = States.Patrolling;
-            return;
-        }
 
 
         if (bc == null)
         {
+            
             bc = PathFinder.FindPath(grd, gridPosThisEnemy, gridDestination);
             needToChangePoint = true;
             firstStep = true;
@@ -447,7 +440,11 @@ public class EnemyChaser : MonoBehaviour
                 }
             }
 
-
+            if (bc == null)
+            {
+                state = States.Patrolling;
+                return;
+            }
 
 
             float xDistance = transform.position.x - nextPoint.x; //If positive, we need to go left
@@ -471,18 +468,33 @@ public class EnemyChaser : MonoBehaviour
             }
 
 
-
             Vector2 move = new Vector2(-xDistance, -yDistance);
-            
-            gameObject.GetComponent<EnemySight>().setAngle(new Vector2(patrolDepartingPosition.x-transform.position.x, patrolDepartingPosition.y - transform.position.y),false);
-            origin = origin + move * speed/2 * Time.deltaTime;
+            currentVector = move;
+
+
+            origin = origin + move * speed * Time.deltaTime;
             rBody.MovePosition(origin);
-            if ((transform.position.x >= nextPoint.x - 0.5f || transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y - 0.5f || transform.position.y <= nextPoint.y + 0.5f))
+            if (firstStep)
+            {
+                gameObject.GetComponent<EnemySight>().setAngle(move, true);
+            }
+            else
+            {
+                gameObject.GetComponent<EnemySight>().setAngle(move, false);
+            }
+
+            Point enemylocation = grd.GetClosestGoodNode(grd.Nodes, transform.position);
+            Point nextPointLocation = grd.GetClosestGoodNode(grd.Nodes, new Vector2(nextPoint.x, nextPoint.y));
+
+
+            if ((transform.position.x >= nextPoint.x - 0.5f && transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y - 0.5f && transform.position.y <= nextPoint.y + 0.5f))
             {
                 forceNext = true;
             }
             else
                 forceNext = false;
+            prevVector = currentVector;
+
         }
         else
         {

@@ -21,7 +21,7 @@ public class FieldOfView : MonoBehaviour
 
     GameObject spawner;
     EnemyChaser eChaser;
-    CameraShader mainCamShader;
+   // CameraShader mainCamShader;
 
     private bool seenFinal;
     private bool seenTemp;
@@ -35,7 +35,7 @@ public class FieldOfView : MonoBehaviour
         origin = Vector3.zero;
 
         seenFinal = false;
-        mainCamShader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShader>();
+        //mainCamShader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShader>();
         // adjustingSpeedMax = 3;
         // adjustingSpeedInc = 0.1f;
         increasing = true;
@@ -63,7 +63,7 @@ public class FieldOfView : MonoBehaviour
         {
             Vector3 vertex;
 
-            RaycastHit2D rayCastHit2D = Physics2D.Raycast(origin, getVectorFromAngle(angle), viewDistance,LayerMask.GetMask("Walls","Player"));
+            RaycastHit2D rayCastHit2D = Physics2D.Raycast(origin, getVectorFromAngle(angle), viewDistance,LayerMask.GetMask("Walls","Player","Doors"));
             if (rayCastHit2D.collider == null)
             {
                 vertex = origin + getVectorFromAngle(angle) * viewDistance;
@@ -101,8 +101,8 @@ public class FieldOfView : MonoBehaviour
         {
             eChaser.State = EnemyChaser.States.Chasing;
             eChaser.playerDetected = true;
-            if (seenFinal == false)
-                 mainCamShader.changeEnemiesChasing(1);
+            //if (seenFinal == false)
+            //     mainCamShader.changeEnemiesChasing(1);
             seenFinal = true;
             eChaser.WorldPosPlayer = GameObject.FindGameObjectWithTag("Player").transform.position;
         }
@@ -110,8 +110,8 @@ public class FieldOfView : MonoBehaviour
         {
             //eChaser.State = 0;
             eChaser.playerDetected = false;
-            if (seenFinal == true)
-                mainCamShader.changeEnemiesChasing(-1);
+            //if (seenFinal == true)
+            //    mainCamShader.changeEnemiesChasing(-1);
             seenFinal = false;
         }
     }

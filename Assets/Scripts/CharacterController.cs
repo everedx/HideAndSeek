@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     private float maxOffset;
     [SerializeField] private GameObject touch;
     [SerializeField] private GameObject threshold;
+    private CharacterInventory charInv;
    // private GameObject touch2
     //private GameObject threshold;
     private
@@ -29,6 +30,7 @@ public class CharacterController : MonoBehaviour
         touch= Instantiate(touch, defaultJoysTickPos, new Quaternion(0,0,0,0),m_OrthographicCamera.transform);
         threshold= Instantiate(threshold, defaultJoysTickPos, new Quaternion(0, 0, 0, 0),m_OrthographicCamera.transform);
         positionJoysTick = new Vector3(0,0,0);
+        charInv = new CharacterInventory();
     }
 
 
@@ -37,36 +39,7 @@ public class CharacterController : MonoBehaviour
     void FixedUpdate()
     {
         rbody.velocity = Vector2.zero;
-        ////// Handle screen touches.
-        ////if (Input.touchCount > 0)
-        ////{
-        ////    Vector2 origin = transform.position;
-        ////    Touch touch = Input.GetTouch(0);
-        ////    Vector2 destination = m_OrthographicCamera.ScreenToWorldPoint(touch.position);
-
-        ////    //IF DISTANCE > reductionFactor, THEN SPEED = MAX, else the speed varies
-        ////    float xDistance = transform.position.x - destination.x; //If positive, we need to go left
-        ////    float yDistance = transform.position.y - destination.y; //If positive we need to go down
-
-        ////    xDistance = -xDistance / reductionFactor;
-        ////    yDistance = -yDistance / reductionFactor;
-        ////    //Debug.Log("X:"+ xDistance + " Y:"+ yDistance);
-        ////    if (Mathf.Abs(xDistance) > 1)
-        ////    {
-        ////        xDistance = (xDistance > 0) ?  1 : -1;
-        ////    }
-        ////    if (Mathf.Abs(yDistance) > 1)
-        ////    {
-        ////        yDistance = (yDistance > 0) ? 1 : -1;
-        ////    }
-        ////   // Debug.Log("X:" + xDistance + " Y:" + yDistance);
-        ////    Vector2 move = new Vector2(xDistance,yDistance);
-
-        ////    origin = origin + move * speed * Time.deltaTime;
-
-        ////    rbody.MovePosition(origin);
-        ////    //m_OrthographicCamera.ScreenToWorldPoint
-        ////}
+      
         movement();
         fingersPreviousFrame = Input.touchCount;
     }
@@ -91,11 +64,7 @@ public class CharacterController : MonoBehaviour
 
         if (Input.touchCount > 0 && fingersPreviousFrame != 0)
         {
-            ////Touch fingerTouch = Input.GetTouch(0);
-            ////positionJoysTick.x = m_OrthographicCamera.ScreenToWorldPoint(fingerTouch.position).x;
-            ////positionJoysTick.y = m_OrthographicCamera.ScreenToWorldPoint(fingerTouch.position).y;
-            ////touch.transform.position = positionJoysTick;
-            ////threshold.transform.position = positionJoysTick;
+ 
 
             Vector2 origin = transform.position;
             Vector3 posTouch= new Vector3(0,0,0);
@@ -132,5 +101,35 @@ public class CharacterController : MonoBehaviour
             Scene scene = SceneManager.GetActiveScene(); 
             SceneManager.LoadScene(scene.name);
         }
+
+        if (collision.gameObject.tag == "Door")
+        {
+            if (charInv.keyExistInInventory(collision.gameObject.name))
+            {
+                //Debug.Log("Open");
+                collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                charInv.removeKey(collision.gameObject.name);
+            }
+            else
+            {
+                //Debug.Log("Closed");
+            }
+        }
+
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.tag == "Key")
+        {
+            //Add Key to inventory (Reference to the door that it opens)
+            charInv.addKey(collision.gameObject.GetComponent<keyController>().getDoorThatThisKeyCanOpen());
+
+            //Destroy Object
+            Destroy(collision.gameObject);
+
+        }
+    }
+
+
 }
