@@ -15,6 +15,7 @@ public class CharacterController : MonoBehaviour
     private float maxOffset;
     [SerializeField] private GameObject touch;
     [SerializeField] private GameObject threshold;
+    [SerializeField] private GameObject inventoryBar;
     private CharacterInventory charInv;
    // private GameObject touch2
     //private GameObject threshold;
@@ -30,7 +31,7 @@ public class CharacterController : MonoBehaviour
         touch= Instantiate(touch, defaultJoysTickPos, new Quaternion(0,0,0,0),m_OrthographicCamera.transform);
         threshold= Instantiate(threshold, defaultJoysTickPos, new Quaternion(0, 0, 0, 0),m_OrthographicCamera.transform);
         positionJoysTick = new Vector3(0,0,0);
-        charInv = new CharacterInventory();
+        charInv = new CharacterInventory(inventoryBar);
     }
 
 
@@ -127,6 +128,8 @@ public class CharacterController : MonoBehaviour
 
             //Destroy Object
             Destroy(collision.gameObject);
+
+
 
         }
     }
