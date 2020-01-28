@@ -1,18 +1,41 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 public class MainMenu : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    public OptionsMenu optionsMenu;
+    public MainPage mainPage;
+    public LevelSelectMenu levelSelectMenu;
+
+
+
+    protected virtual void Awake()
     {
-        
+        mainPage.showTitleScreen();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void showOptions()
     {
-        
+        mainPage.hideTitleScreen();
+        optionsMenu.showOptions();
     }
+
+    public void backFromOptions()
+    {
+        optionsMenu.hideOptions();
+        mainPage.showTitleScreen();
+    }
+
+    public void showLevels()
+    {
+        mainPage.hideTitleScreen();
+        levelSelectMenu.showLevelSelect();
+    }
+
+    public void backFromLevels()
+    {
+        levelSelectMenu.hideShowLevelSelect();
+        mainPage.showTitleScreen();
+    }
+
 }
