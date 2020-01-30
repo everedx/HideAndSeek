@@ -23,6 +23,7 @@ public class MainMenu : MonoBehaviour
     public void backFromOptions()
     {
         optionsMenu.hideOptions();
+        optionsMenu.UpdateVolumesSave();
         mainPage.showTitleScreen();
     }
 

@@ -28,6 +28,7 @@ public class GameManager : MonoBehaviour
     protected virtual void Start()
     {
         SetVolumes(m_DataStore.masterVolume, m_DataStore.sfxVolume, m_DataStore.musicVolume, false);
+        instance = this;
     }
    	protected void Awake()
     {
@@ -69,12 +70,20 @@ public class GameManager : MonoBehaviour
 
         if (save)
         {
+            Debug.Log(Application.persistentDataPath);
             // Apply to save data too
             m_DataStore.masterVolume = master;
             m_DataStore.sfxVolume = sfx;
             m_DataStore.musicVolume = music;
             SaveData();
         }
+    }
+
+    public virtual void GetVolumes(out float master, out float sfx, out float music)
+    {
+        master = m_DataStore.masterVolume;
+        sfx = m_DataStore.sfxVolume;
+        music = m_DataStore.musicVolume;
     }
 
 
