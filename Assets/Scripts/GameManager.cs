@@ -28,10 +28,11 @@ public class GameManager : MonoBehaviour
     protected virtual void Start()
     {
         SetVolumes(m_DataStore.masterVolume, m_DataStore.sfxVolume, m_DataStore.musicVolume, false);
-        instance = this;
+        
     }
    	protected void Awake()
     {
+        instance = this;
         LoadData();
     }
 
@@ -121,5 +122,16 @@ public class GameManager : MonoBehaviour
             m_DataStore = new GameDataStore();
             SaveData();
         }
+    }
+
+    public int GetStarsForLevel(string levelId)
+    {
+        if (!levelList.ContainsKey(levelId))
+        {
+            Debug.LogWarningFormat("[GAME] Cannot check if level with id = {0} is completed. Not in level list", levelId);
+            return 0;
+        }
+
+        return m_DataStore.GetNumberOfStarForLevel(levelId);
     }
 }

@@ -34,6 +34,7 @@ public class EnemyChaser : MonoBehaviour
     //Patrol mode variables
     [SerializeField] private float patrolXDistance;
     [SerializeField] private float patrolYDistance;
+    [SerializeField] private bool menuMode;
     private Vector2 patrolDestination;
     private Vector2 patrolDepartingPosition;
     private bool patrolGoingToDestination;
@@ -89,7 +90,8 @@ public class EnemyChaser : MonoBehaviour
         pathFinderObject = GameObject.FindGameObjectWithTag("Pathfinder");
         grd = pathFinderObject.GetComponent<Grid>().Instance;
         needToChangePoint = false;
-        PlayerPrevPos = grd.GetClosestGoodNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
+        if(!menuMode)
+            PlayerPrevPos = grd.GetClosestGoodNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
         patrolDepartingPosition = transform.position;
         patrolDestination = new Vector2(transform.position.x + patrolXDistance, transform.position.y + patrolYDistance);
         patrolGoingToDestination = true;

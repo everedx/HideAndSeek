@@ -47,4 +47,4 @@ MonoBehaviour:
   sfxVolumeParameter: SFXVolume
   musicVolumeParameter: MusicVolume
   gameMixer: {fileID: 24100000, guid: 9e0d7afef5067224c9e0bfd0aeecab80, type: 2}
-  levelList: {fileID: 0}
+  levelList: {fileID: 11400000, guid: 250ef8c43374f5f419702d12474c61b8, type: 2}
