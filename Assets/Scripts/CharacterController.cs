@@ -99,8 +99,17 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Enemy")
         {
-            Scene scene = SceneManager.GetActiveScene(); 
-            SceneManager.LoadScene(scene.name);
+            GameObject levelChanger = GameObject.Find("LevelChanger");
+            if (levelChanger != null)
+            {
+                m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
+                Scene scene = SceneManager.GetActiveScene(); 
+                //SceneManager.LoadScene(scene.name);
+                levelChanger.GetComponent<LevelChanger>().changeToLevel(scene.name);
+            }
+
+            //Scene scene = SceneManager.GetActiveScene(); 
+            //SceneManager.LoadScene(scene.name);
         }
 
         if (collision.gameObject.tag == "Door")

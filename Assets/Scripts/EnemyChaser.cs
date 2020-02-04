@@ -17,6 +17,11 @@ public class EnemyChaser : MonoBehaviour
     private float countChangeDirection;
     private bool timePatrolSet;
     float angle;
+    private bool staticEnemy;
+    [SerializeField] private Directions staticSightDirection = Directions.Up;
+    Vector2 staticViewVector;
+    bool setStaticSight;
+    bool initialState = true;
 
     //Chasing mode variables
     GameObject pathFinderObject;
@@ -40,6 +45,7 @@ public class EnemyChaser : MonoBehaviour
     private bool patrolGoingToDestination;
     Vector2 prevVector;
     Vector2 currentVector;
+    
 
     //ComeBack mode
     [SerializeField] private int secondsToGoBackToPatrol;
@@ -74,6 +80,7 @@ public class EnemyChaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        initialState = true;
         //countChasePath = 0;
         secondsToGoBackToPatrolCounter = 0;
         forceNext = false;
@@ -97,6 +104,26 @@ public class EnemyChaser : MonoBehaviour
         patrolGoingToDestination = true;
         mainCamShader = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<CameraShader>();
         prevState = States.Patrolling;
+        if (patrolXDistance == 0 && patrolYDistance == 0)
+            staticEnemy = true;
+        else
+            staticEnemy = false;
+        switch (staticSightDirection)
+        {
+            case Directions.Up:
+                staticViewVector = Vector2.up;
+                break;
+            case Directions.Down:
+                staticViewVector = Vector2.down;
+                break;
+            case Directions.Right:
+                staticViewVector = Vector2.right;
+                break;
+            case Directions.Left:
+                staticViewVector = Vector2.left;
+                break;
+        }
+        setStaticSight = true;
     }
 
     // Update is called once per frame
@@ -105,6 +132,14 @@ public class EnemyChaser : MonoBehaviour
         switch (state)
         {
             case States.Patrolling:
+                if (prevState != States.Patrolling || initialState)
+                {
+                         gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, true);
+                }
+                if (staticEnemy)
+                {
+                         gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, false) ;
+                }
                 patrol();
                 prevState = state;
                 break;
@@ -125,8 +160,8 @@ public class EnemyChaser : MonoBehaviour
                 lookForPlayerRandomly();
                 break;
         }
-        
 
+        initialState = false;
     }
 
     private void patrol()
@@ -146,11 +181,7 @@ public class EnemyChaser : MonoBehaviour
             gridDestination = grd.GetClosestGoodNode(grd.Nodes, patrolDepartingPosition);
         }
 
-        //if (gridDestination.X == gridPosThisEnemy.X && gridDestination.Y == gridPosThisEnemy.Y)
-        //{
-        //    patrolGoingToDestination = !patrolGoingToDestination;
-        //    return;
-        //}
+
 
 
         if ( bc == null)
@@ -214,15 +245,17 @@ public class EnemyChaser : MonoBehaviour
             
             origin = origin + move * speed * Time.deltaTime;
             rBody.MovePosition(origin);
-            if (firstStep)
+            if (!staticEnemy)
             {
-                gameObject.GetComponent<EnemySight>().setAngle(move,true);
+                if (firstStep)
+                {
+                    gameObject.GetComponent<EnemySight>().setAngle(move, true);
+                }
+                else
+                {
+                    gameObject.GetComponent<EnemySight>().setAngle(move, false);
+                }
             }
-            else
-            {
-                gameObject.GetComponent<EnemySight>().setAngle(move,false);
-            }
-            
             Point enemylocation = grd.GetClosestGoodNode(grd.Nodes, transform.position);
             Point nextPointLocation = grd.GetClosestGoodNode(grd.Nodes, new Vector2(nextPoint.x, nextPoint.y));
 
