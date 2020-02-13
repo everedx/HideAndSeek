@@ -17,9 +17,14 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject threshold;
     [SerializeField] private GameObject inventoryBar;
     private CharacterInventory charInv;
-   // private GameObject touch2
+    private Animator anim;
+    private bool movementEnabled;
+
+    public bool MovementEnabled { get => movementEnabled; set => movementEnabled = value; }
+
+    // private GameObject touch2
     //private GameObject threshold;
-    private
+
     // Start is called before the first frame update
     void Start()
     {
@@ -32,6 +37,9 @@ public class CharacterController : MonoBehaviour
         threshold= Instantiate(threshold, defaultJoysTickPos, new Quaternion(0, 0, 0, 0),m_OrthographicCamera.transform);
         positionJoysTick = new Vector3(0,0,0);
         charInv = new CharacterInventory(inventoryBar);
+        anim = GetComponent<Animator>();
+        movementEnabled = true;
+        
     }
 
 
@@ -40,8 +48,10 @@ public class CharacterController : MonoBehaviour
     void FixedUpdate()
     {
         rbody.velocity = Vector2.zero;
-      
-        movement();
+        if (movementEnabled)
+        {
+            movement();
+        }
         fingersPreviousFrame = Input.touchCount;
     }
 
@@ -52,6 +62,7 @@ public class CharacterController : MonoBehaviour
         {
             touch.transform.position = defaultJoysTickPos;
             threshold.transform.position = defaultJoysTickPos;
+            anim.SetFloat("speed",0);
         }
 
         if (Input.touchCount > 0 && fingersPreviousFrame == 0)
@@ -90,27 +101,17 @@ public class CharacterController : MonoBehaviour
             }
             move = move / maxOffset;
             origin = origin + move * speed * Time.deltaTime;
-
+            anim.SetFloat("speed", speed);
+            float angle = Vector2.SignedAngle(Vector2.up,move);
+            transform.rotation = Quaternion.Euler(0,0,angle);
             rbody.MovePosition(origin);
+            
         }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.tag == "Enemy")
-        {
-            GameObject levelChanger = GameObject.Find("LevelChanger");
-            if (levelChanger != null)
-            {
-                m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
-                Scene scene = SceneManager.GetActiveScene(); 
-                //SceneManager.LoadScene(scene.name);
-                levelChanger.GetComponent<LevelChanger>().changeToLevel(scene.name);
-            }
-
-            //Scene scene = SceneManager.GetActiveScene(); 
-            //SceneManager.LoadScene(scene.name);
-        }
+        
 
         if (collision.gameObject.tag == "Door")
         {
@@ -141,6 +142,37 @@ public class CharacterController : MonoBehaviour
 
 
         }
+        if (collision.gameObject.tag == "Enemy")
+        {
+            GameObject levelChanger = GameObject.Find("LevelChanger");
+            if (levelChanger != null)
+            {
+                m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
+                Scene scene = SceneManager.GetActiveScene();
+                //SceneManager.LoadScene(scene.name);
+                levelChanger.GetComponent<LevelChanger>().changeToLevel(scene.name);
+            }
+
+            //Scene scene = SceneManager.GetActiveScene(); 
+            //SceneManager.LoadScene(scene.name);
+        }
+        if (collision.gameObject.tag == "Finish")
+        {
+            GameObject levelChanger = GameObject.Find("LevelChanger");
+            if (levelChanger != null)
+            {
+                m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
+                Scene scene = SceneManager.GetActiveScene();
+                //SceneManager.LoadScene(scene.name);
+                GameObject.Find("GameController").GetComponent<SceneController>().stopScene();
+                GameObject.Find("FinishMenu").GetComponent<FinishMenu>().showFinishMenu();
+                //levelChanger.GetComponent<LevelChanger>().changeToLevel(scene.name);
+            }
+
+            //Scene scene = SceneManager.GetActiveScene(); 
+            //SceneManager.LoadScene(scene.name);
+        }
+
     }
 
 

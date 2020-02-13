@@ -9,7 +9,7 @@ public class EnemyChaser : MonoBehaviour
     Rigidbody2D rBody;
     Vector2 iniPosition;
     CameraShader mainCamShader;
-
+    private float adjRotationParam;
 
     [SerializeField] private float speed = 5.0f;
     [SerializeField] private float speedWhileChasing = 6.5f;
@@ -51,6 +51,8 @@ public class EnemyChaser : MonoBehaviour
     [SerializeField] private int secondsToGoBackToPatrol;
     private float secondsToGoBackToPatrolCounter;
 
+   
+
     public Vector2 WorldPosPlayer { get => worldPosPlayer; set => worldPosPlayer = value; }
     private enum Directions
     {
@@ -74,12 +76,14 @@ public class EnemyChaser : MonoBehaviour
     public int DirToGo { get => dirToGo; }
     private int dirToGo;
     public States State { get => state; set => state = value; }
-   
+    private bool movementEnabled;
+    public bool MovementEnabled { get => movementEnabled; set => movementEnabled = value; }
 
     private States state;
     // Start is called before the first frame update
     void Start()
     {
+        movementEnabled = true;
         initialState = true;
         //countChasePath = 0;
         secondsToGoBackToPatrolCounter = 0;
@@ -124,42 +128,49 @@ public class EnemyChaser : MonoBehaviour
                 break;
         }
         setStaticSight = true;
+        adjRotationParam = 10f;
     }
 
     // Update is called once per frame
     void Update()
     {
-        switch (state)
+        if (movementEnabled)
         {
-            case States.Patrolling:
-                if (prevState != States.Patrolling || initialState)
-                {
-                         gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, true);
-                }
-                if (staticEnemy)
-                {
-                         gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, false) ;
-                }
-                patrol();
-                prevState = state;
-                break;
-            case States.Chasing:
-                if(prevState == States.Patrolling || prevState == States.ComingBack)
-                    mainCamShader.changeEnemiesChasing(1);
-                prevState = state;
-                chase();
-                break;
-            case States.ComingBack:
-                if (prevState == States.LookingForPlayer)
-                    mainCamShader.changeEnemiesChasing(-1);
-                prevState = state;
-                comeBack();
-                break;
-            case States.LookingForPlayer:
-                prevState = state;
-                lookForPlayerRandomly();
-                break;
+            switch (state)
+            {
+                case States.Patrolling:
+                    if (prevState != States.Patrolling || initialState)
+                    {
+                        gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, true);
+                    }
+                    if (staticEnemy)
+                    {
+                        gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, false);
+                        adjustRotation(staticViewVector);
+                    }
+                    patrol();
+                    prevState = state;
+                    break;
+                case States.Chasing:
+                    if (prevState == States.Patrolling || prevState == States.ComingBack)
+                        mainCamShader.changeEnemiesChasing(1);
+                    prevState = state;
+                    chase();
+                    break;
+                case States.ComingBack:
+                    if (prevState == States.LookingForPlayer)
+                        mainCamShader.changeEnemiesChasing(-1);
+                    prevState = state;
+                    comeBack();
+                    break;
+                case States.LookingForPlayer:
+                    prevState = state;
+                    lookForPlayerRandomly();
+                    break;
+            }
         }
+
+       
 
         initialState = false;
     }
@@ -244,6 +255,7 @@ public class EnemyChaser : MonoBehaviour
             
             
             origin = origin + move * speed * Time.deltaTime;
+            adjustRotation(move);
             rBody.MovePosition(origin);
             if (!staticEnemy)
             {
@@ -326,6 +338,7 @@ public class EnemyChaser : MonoBehaviour
                 break;
         }
         origin = origin + move * speed/2 * Time.deltaTime;
+        adjustRotation(move);
         rBody.MovePosition(origin);
         //transform.rotation = Quaternion.Euler(0, 0, angle); 
         //Debug.DrawRay(rBody.position, lookDir, Color.red);
@@ -418,6 +431,7 @@ public class EnemyChaser : MonoBehaviour
 
 
             Vector2 move = new Vector2(-xDistance, -yDistance);
+            adjustRotation(move);
             origin = origin + move * speedWhileChasing * Time.deltaTime;
             rBody.MovePosition(origin);
             if ((transform.position.x >= nextPoint.x - 0.5f || transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y-0.5f || transform.position.y <= nextPoint.y + 0.5f))
@@ -506,7 +520,7 @@ public class EnemyChaser : MonoBehaviour
             Vector2 move = new Vector2(-xDistance, -yDistance);
             currentVector = move;
 
-
+            adjustRotation(move);
             origin = origin + move * speed * Time.deltaTime;
             rBody.MovePosition(origin);
             if (firstStep)
@@ -557,5 +571,36 @@ public class EnemyChaser : MonoBehaviour
         var rand = new System.Random();
         int index = rand.Next(minim, maxim - exclude.Count);
         return range.ElementAt(index);
+    }
+
+
+    private void adjustRotation(Vector2 move)
+    {
+        float angleRot = Vector2.SignedAngle(Vector2.up, move);
+        float currentAngle = transform.eulerAngles.z;
+        float newAngle;
+        if (angleRot < 0)
+            angleRot += 360;
+        angleRot += 360;
+        if (currentAngle < 0)
+            currentAngle += 360;
+        currentAngle += 360;
+        newAngle = currentAngle;
+        
+        if (currentAngle < angleRot -5)
+        {
+            newAngle = currentAngle + adjRotationParam;
+         
+        }
+        else if (currentAngle > angleRot + 5)
+        {
+            newAngle = currentAngle - adjRotationParam;
+        }
+        
+        //newAngle = currentAngle + 5;
+       // Debug.Log("Angulo:"+ currentAngle +"  Movement:"+ angleRot   +"  New angle: " + newAngle);
+        Quaternion qua = Quaternion.Euler(0, 0, newAngle);
+        //Debug.Log(qua);
+        transform.rotation = qua;
     }
 }

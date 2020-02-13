@@ -44,7 +44,7 @@ public class FieldOfView : MonoBehaviour
     void Update(){
 
         fov = 90f;
-        rayCount = 100;
+        rayCount = 50;
         angle = startingAngle;
         angleIncrease = fov / rayCount;
         viewDistance = 20f;
@@ -95,6 +95,9 @@ public class FieldOfView : MonoBehaviour
         mesh.vertices = vertices;
         mesh.uv = uv;
         mesh.triangles = triangles;
+
+
+
         mesh.bounds = new Bounds(origin,Vector3.one*1000);
 
         if (seenTemp == true)

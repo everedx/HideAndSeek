@@ -55,4 +55,11 @@ public class MenuController : MonoBehaviour
         else
             pauseGame();
     }
+
+    public void disableButtons()
+    {
+        playPauseButton.enabled = false;
+        stopButton.enabled = false;
+    }
+
 }

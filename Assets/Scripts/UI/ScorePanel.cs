@@ -24,7 +24,10 @@ using UnityEngine.UI;
 			score = Mathf.Clamp(score, 0, starImages.Length);
 			for (int i = 0; i < score; i++)
 			{
-				starImages[i].sprite = achievedStarSprite;
+                Vector3 originalDelta = starImages[i].rectTransform.sizeDelta; //get the original Image's rectTransform's size delta and store it in a Vector called originalDelta
+                starImages[i].sprite = achievedStarSprite; //swap out the new image
+                starImages[i].rectTransform.sizeDelta = originalDelta; //size it as the old one was.
+                //starImages[i].sprite = achievedStarSprite;
 			}
 		}
 	}

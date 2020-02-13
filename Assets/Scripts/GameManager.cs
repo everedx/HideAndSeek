@@ -124,6 +124,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public bool IsLevelCompleted(string levelId)
+    {
+        if (!levelList.ContainsKey(levelId))
+        {
+            Debug.LogWarningFormat("[GAME] Cannot check if level with id = {0} is completed. Not in level list", levelId);
+            return false;
+        }
+
+        return m_DataStore.IsLevelCompleted(levelId);
+    }
     public int GetStarsForLevel(string levelId)
     {
         if (!levelList.ContainsKey(levelId))
@@ -133,5 +143,17 @@ public class GameManager : MonoBehaviour
         }
 
         return m_DataStore.GetNumberOfStarForLevel(levelId);
+    }
+
+    public void CompleteLevel(string levelId, int starsEarned)
+    {
+        if (!levelList.ContainsKey(levelId))
+        {
+            Debug.LogWarningFormat("[GAME] Cannot complete level with id = {0}. Not in level list", levelId);
+            return;
+        }
+
+        m_DataStore.CompleteLevel(levelId, starsEarned);
+        SaveData();
     }
 }
