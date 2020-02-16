@@ -6,6 +6,7 @@
     }
     SubShader
     {
+		// Tags { "RenderType" = "Opaque" "RenderPipeline" = "LWRP" "IgnoreProjector" = "True"}
         // No culling or depth
         Cull Off ZWrite Off ZTest Always
 

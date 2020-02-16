@@ -116,7 +116,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   limitLeft: -8
-  limitRight: 0
+  limitRight: 11.82
   limitUp: 16
   limitDown: 0
   m_OrthographicCamera: {fileID: 3568480416627296241}

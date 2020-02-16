@@ -16,40 +16,40 @@ MonoBehaviour:
   - id: Level 1
     name: Level 1
     description: Level 1
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST1
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST2
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST3
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST4
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST5
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST6
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST7
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST8
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D
   - id: TEST9
     name: TEST
     description: TEST
-    sceneName: MainScene
+    sceneName: MainSceneLight2D

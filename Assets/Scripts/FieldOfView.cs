@@ -16,6 +16,7 @@ public class FieldOfView : MonoBehaviour
     [SerializeField] private float adjustingSpeedMax;
     private float adjustingSpeed;
     [SerializeField] private float adjustingOffset;
+    [SerializeField] private GameObject lightFOV;
     private bool increasing;
 
 
@@ -123,12 +124,20 @@ public class FieldOfView : MonoBehaviour
     public void setOrigin(Vector3 origin)
     {
         this.origin = origin;
+        lightFOV.transform.position = this.origin;
     }
 
     public void setAimDirection(Vector3 aimDir)
     {
         startingAngle = getAngleFromVector(aimDir) - fov/2f;
         adjustingSpeed = 0;
+        //Debug.Log(startingAngle);
+        lightFOV.transform.eulerAngles = new Vector3(0, 0, startingAngle + fov / 2f+180);
+    }
+
+    public float getAimDirection()
+    {
+        return startingAngle;
         //Debug.Log(startingAngle);
     }
 
@@ -160,6 +169,7 @@ public class FieldOfView : MonoBehaviour
         //startingAngle = startingAngle + adjustingSpeed;
         //startingAngle = getAngleFromVector(aimDir) - fov / 2f;
         //Debug.Log(startingAngle);
+        lightFOV.transform.eulerAngles = new Vector3(0, 0, startingAngle + fov / 2f + 180);
     }
 
     public void setSpawner(GameObject spawner)
