@@ -134,7 +134,7 @@ public class CharacterController : MonoBehaviour
         if (collision.gameObject.tag == "Key")
         {
             //Add Key to inventory (Reference to the door that it opens)
-            charInv.addKey(collision.gameObject.GetComponent<keyController>().getDoorThatThisKeyCanOpen());
+            charInv.addKey(collision.gameObject.GetComponent<keyController>().getDoorThatThisKeyCanOpen(),collision.gameObject.GetComponent<SpriteRenderer>().sprite);
 
             //Destroy Object
             Destroy(collision.gameObject);

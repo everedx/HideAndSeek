@@ -13,10 +13,10 @@ public class CharacterInventory
         inventoryBar = inv;
     }
 
-    public void addKey(string doorName)
+    public void addKey(string doorName, Sprite sprite)
     {
         doorkeys.Add(doorName);
-        addKeyInventory(doorName);
+        addKeyInventory(doorName,sprite);
     }
     public void removeKey(string doorName)
     {
@@ -35,14 +35,33 @@ public class CharacterInventory
         return doorkeys.Count;
     }
 
-    private void addKeyInventory(string name)
+    private void addKeyInventory(string name,Sprite sprite)
     {
         int keys = getNumberOfKeys();
-        GameObject img = (GameObject)Object.Instantiate(Resources.Load("CanvasKey"), inventoryBar.transform);
-        img.name = name + "Inventory";
-        RectTransform rt = (RectTransform)img.transform;
-        img.transform.localPosition = new Vector2( 1100 - keys * rt.rect.width,0);
-        
+        GameObject img = null; 
+
+        switch(sprite.name)
+        {
+            case "Tarjeta":
+                img = (GameObject)Object.Instantiate(Resources.Load("CanvasKeyRed"), inventoryBar.transform);
+                break;
+            case "Tarjeta_azul":
+                img = (GameObject)Object.Instantiate(Resources.Load("CanvasKeyBlue"), inventoryBar.transform);
+                break;
+            case "Tarjeta_verde":
+                img = (GameObject)Object.Instantiate(Resources.Load("CanvasKeyGreen"), inventoryBar.transform);
+                break;
+            case "Tarjeta_amarilla":
+                img = (GameObject)Object.Instantiate(Resources.Load("CanvasKeyYellow"), inventoryBar.transform);
+                break;
+        }
+
+        if (img != null)
+        {
+            img.name = name + "Inventory";
+            RectTransform rt = (RectTransform)img.transform;
+            img.transform.localPosition = new Vector2(1100 - keys * rt.rect.width, 0);
+        }
     }
 
     private void removeKeyInventory(string name)

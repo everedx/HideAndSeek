@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7106383094076334812}
   - component: {fileID: 7106383094076334813}
   - component: {fileID: 7106383094076334754}
+  - component: {fileID: 337338112911809420}
   m_Layer: 0
   m_Name: Key
   m_TagString: Key
@@ -121,3 +122,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorThatThisKeyCanOpen: {fileID: 0}
+--- !u!95 &337338112911809420
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7106383094076334814}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: fc318c3952111694cbcbd6151bf28a40, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

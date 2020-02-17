@@ -46,7 +46,7 @@ public class SceneController : MonoBehaviour
         for (int i = 0; i < timeThresholdsScores.Length; i++)
         {
             if (secondsScore < timeThresholdsScores[i])
-                return timeThresholdsScores.Length+1-i;
+                return timeThresholdsScores.Length-i;
         }
         if(secondsScore > timeThresholdsScores[timeThresholdsScores.Length-1])
             return timeThresholdsScores.Length;

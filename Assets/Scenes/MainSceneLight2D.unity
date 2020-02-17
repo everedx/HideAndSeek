@@ -22045,9 +22045,9 @@ Tilemap:
   - m_RefCount: 1393
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   - m_RefCount: 0
-    m_Data: {r: 2.3455e-41, g: 2.3455e-41, b: 2.3455e-41, a: 2.3455e-41}
+    m_Data: {r: 3.9393e-41, g: 3.9393e-41, b: 3.9393e-41, a: 3.9393e-41}
   - m_RefCount: 914
-    m_Data: {r: 0.5660378, g: 0.3818085, b: 0.3818085, a: 1}
+    m_Data: {r: 0.14150941, g: 0.14150941, b: 0.14150941, a: 1}
   m_AnimationFrameRate: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Origin: {x: -30, y: -16, z: 0}
@@ -24726,7 +24726,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   textFinishLevel: {fileID: 195644882}
   scorePanel: {fileID: 622955686}
-  timeThresholdsScores: 0f00000019000000280000003c000000
+  timeThresholdsScores: 1400000019000000280000003c00000046000000
 --- !u!114 &916721863
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -28847,6 +28847,31 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 21300000, guid: df89ad42107b9e648b71a73708cae990,
         type: 3}
+    - target: {fileID: 1662125565082596931, guid: 5754116de53b3b14d9cf34ba89527908,
+        type: 3}
+      propertyPath: m_Tiles.Array.data[0].second.m_TileColorIndex
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662125565082596931, guid: 5754116de53b3b14d9cf34ba89527908,
+        type: 3}
+      propertyPath: m_TileColorArray.Array.data[23].m_Data.r
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662125565082596931, guid: 5754116de53b3b14d9cf34ba89527908,
+        type: 3}
+      propertyPath: m_TileColorArray.Array.data[23].m_Data.g
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662125565082596931, guid: 5754116de53b3b14d9cf34ba89527908,
+        type: 3}
+      propertyPath: m_TileColorArray.Array.data[23].m_Data.b
+      value: 0.14150941
+      objectReference: {fileID: 0}
+    - target: {fileID: 1662125565082596931, guid: 5754116de53b3b14d9cf34ba89527908,
+        type: 3}
+      propertyPath: m_TileColorArray.Array.data[23].m_Data.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8416780129791992628, guid: 5754116de53b3b14d9cf34ba89527908,
         type: 3}
       propertyPath: m_LocalPosition.x
