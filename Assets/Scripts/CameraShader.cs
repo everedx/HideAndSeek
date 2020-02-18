@@ -15,7 +15,7 @@ public class CameraShader : MonoBehaviour
     private bool growing;
     //public float vignetteSize;
     private int enemiesChasing;
-    private Light2D lightCharacter;
+    private Light2D[] lightCharacter;
     private float valueColors;
    //Material material;
 
@@ -27,7 +27,7 @@ public class CameraShader : MonoBehaviour
         //vignetteSize = 0;
 
         //material = new Material(shader);
-        lightCharacter = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<Light2D>() ;
+        lightCharacter = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light2D>() ;
     }
 
     //private void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -42,7 +42,7 @@ public class CameraShader : MonoBehaviour
     {
         // material.EnableKeyword("_NORMALMAP");
         // Debug.Log(enemiesChasing);
-        valueColors = lightCharacter.color.b;
+        valueColors = lightCharacter[0].color.b;
         if (enemiesChasing > 0)
         {
             if (valueColors < 0.5)
@@ -65,7 +65,11 @@ public class CameraShader : MonoBehaviour
                     growing = true;
                 //Debug.Log(vignetteSize);
             }
-            lightCharacter.color = new Color(2f, valueColors, valueColors);
+            foreach (Light2D l2D in lightCharacter)
+            {
+                l2D.color = new Color(2f, valueColors, valueColors);
+            }
+           
         }
         else 
         {
@@ -73,7 +77,10 @@ public class CameraShader : MonoBehaviour
                 valueColors = valueColors + Time.deltaTime;
             growing = true;
             //Debug.Log(vignetteSize);
-            lightCharacter.color = new Color(1,valueColors,valueColors);
+            foreach (Light2D l2D in lightCharacter)
+            {
+                l2D.color = new Color(1, valueColors, valueColors);
+            }
         }
     }
 

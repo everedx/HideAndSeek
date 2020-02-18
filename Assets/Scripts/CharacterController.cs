@@ -149,12 +149,12 @@ public class CharacterController : MonoBehaviour
             {
                 m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
                 Scene scene = SceneManager.GetActiveScene();
-                //SceneManager.LoadScene(scene.name);
-                levelChanger.GetComponent<LevelChanger>().changeToLevel(scene.name);
+               
+                GameObject.Find("GameController").GetComponent<SceneController>().stopScene();
+                GameObject.Find("LostMenu").GetComponent<LostMenu>().showLostMenu();
             }
 
-            //Scene scene = SceneManager.GetActiveScene(); 
-            //SceneManager.LoadScene(scene.name);
+          
         }
         if (collision.gameObject.tag == "Finish")
         {
@@ -162,15 +162,12 @@ public class CharacterController : MonoBehaviour
             if (levelChanger != null)
             {
                 m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
-                Scene scene = SceneManager.GetActiveScene();
-                //SceneManager.LoadScene(scene.name);
                 GameObject.Find("GameController").GetComponent<SceneController>().stopScene();
                 GameObject.Find("FinishMenu").GetComponent<FinishMenu>().showFinishMenu();
-                //levelChanger.GetComponent<LevelChanger>().changeToLevel(scene.name);
+               
             }
 
-            //Scene scene = SceneManager.GetActiveScene(); 
-            //SceneManager.LoadScene(scene.name);
+     
         }
 
     }

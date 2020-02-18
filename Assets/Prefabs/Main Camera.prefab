@@ -98,11 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shader: {fileID: 4800000, guid: 12c1be9a2457fef45a826dc38eb21c56, type: 3}
-  vignetteSizeMax: 2
-  vignetteSizeMin: 1.5
-  vignetteSmoothness: 1
-  vignetteEdgeRound: 15
-  vignetteSize: 0
 --- !u!114 &3568480416627296015
 MonoBehaviour:
   m_ObjectHideFlags: 0

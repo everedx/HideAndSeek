@@ -61,5 +61,11 @@ public class MenuController : MonoBehaviour
         playPauseButton.enabled = false;
         stopButton.enabled = false;
     }
+    public void enableButtons()
+    {
+        playPauseButton.enabled = true;
+        stopButton.enabled = true;
+    }
+
 
 }

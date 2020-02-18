@@ -32,6 +32,26 @@ public class SceneController : MonoBehaviour
         }
     }
 
+    public void resumeScene()
+    {
+        //Stop and update timer
+        GetComponent<TimerScene>().TimerEnabled = true;
+        //disable ingame GUI
+        GetComponent<MenuController>().enableButtons();
+
+        //STOP GAME
+        GameObject.FindGameObjectWithTag("Player").GetComponent<CharacterController>().MovementEnabled = true;
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            EnemyChaser eChaser = enemy.GetComponent<EnemyChaser>();
+            if (eChaser != null)
+            {
+                eChaser.MovementEnabled = true;
+            }
+        }
+    }
+
     private void setScore()
     {
         int score = calculateScore();
@@ -49,7 +69,7 @@ public class SceneController : MonoBehaviour
                 return timeThresholdsScores.Length-i;
         }
         if(secondsScore > timeThresholdsScores[timeThresholdsScores.Length-1])
-            return timeThresholdsScores.Length;
+            return 0;
         return 0;
     }
 }
