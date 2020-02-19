@@ -13,43 +13,43 @@ MonoBehaviour:
   m_Name: LevelList
   m_EditorClassIdentifier: 
   levels:
-  - id: Level 1
-    name: Level 1
+  - id: Level1
+    name: Level1
     description: Level 1
-    sceneName: MainSceneLight2D
-  - id: TEST1
-    name: TEST
+    sceneName: Level1
+  - id: Level2
+    name: Level2
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST2
-    name: TEST
+    sceneName: Level2
+  - id: Level3
+    name: Level3
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST3
-    name: TEST
+    sceneName: Level3
+  - id: Level4
+    name: Level4
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST4
-    name: TEST
+    sceneName: Level4
+  - id: Level5
+    name: Level5
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST5
-    name: TEST
+    sceneName: Level5
+  - id: Level6
+    name: Level6
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST6
-    name: TEST
+    sceneName: Level6
+  - id: Level7
+    name: Level7
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST7
-    name: TEST
+    sceneName: Level7
+  - id: Level8
+    name: Level8
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST8
-    name: TEST
+    sceneName: Level8
+  - id: Level9
+    name: Level9
     description: TEST
-    sceneName: MainSceneLight2D
-  - id: TEST9
-    name: TEST
+    sceneName: Level9
+  - id: Level10
+    name: Level10
     description: TEST
-    sceneName: MainSceneLight2D
+    sceneName: Level10

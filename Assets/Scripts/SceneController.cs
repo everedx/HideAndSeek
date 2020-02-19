@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
@@ -10,12 +11,14 @@ public class SceneController : MonoBehaviour
     [SerializeField] ScorePanel scorePanel;
     public int[] timeThresholdsScores;
 
-    public void stopScene()
+    public void stopScene(bool saveData)
     {
         //Stop and update timer
         GetComponent<TimerScene>().TimerEnabled = false;
         textFinishLevel.text=GameObject.Find("Timer").GetComponent<Text>().text;
-        setScore();
+        int score = 0;
+        if(saveData)
+            score= setScore();
         //disable ingame GUI
         GetComponent<MenuController>().disableButtons();
 
@@ -30,6 +33,15 @@ public class SceneController : MonoBehaviour
                 eChaser.MovementEnabled = false;
             }
         }
+
+        if (saveData)
+        {
+            if (!GameManager.instance.IsLevelCompleted(SceneManager.GetActiveScene().name) || GameManager.instance.GetStarsForLevel(SceneManager.GetActiveScene().name) < score)
+            { 
+                 GameManager.instance.CompleteLevel(SceneManager.GetActiveScene().name,score);
+            }
+        }
+
     }
 
     public void resumeScene()
@@ -52,11 +64,11 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    private void setScore()
+    private int setScore()
     {
         int score = calculateScore();
         scorePanel.SetStars(score);
-        
+        return score;
     }
 
     private int calculateScore()

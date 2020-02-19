@@ -57,25 +57,42 @@ public class LevelSelectMenu : MonoBehaviour
         int amount = m_LevelList.Count;
         for (int i = 0; i < amount; i++)
         {
-            LevelSelectButton button = CreateButton(m_LevelList[i]);
-            button.transform.SetParent(layout.transform);
-            button.transform.localScale = Vector3.one;
-            m_Buttons.Add(button.GetComponent<Button>());
+
+            if (i > 0)
+            {
+                //If we haven't finished the previous level, we cant show this one
+                if (GameManager.instance.IsLevelCompleted(m_LevelList[i - 1].id))
+                {
+                    LevelSelectButton button = CreateButton(m_LevelList[i]);
+                    button.transform.SetParent(layout.transform);
+                    button.transform.localScale = Vector3.one;
+                    m_Buttons.Add(button.GetComponent<Button>());
+                }
+            }
+            else
+            {
+                LevelSelectButton button = CreateButton(m_LevelList[i]);
+                button.transform.SetParent(layout.transform);
+                button.transform.localScale = Vector3.one;
+                m_Buttons.Add(button.GetComponent<Button>());
+            }
+          
+
         }
         if (rightBuffer != null)
         {
             rightBuffer.SetAsLastSibling();
         }
 
-        for (int index = 1; index < m_Buttons.Count - 1; index++)
-        {
-            Button button = m_Buttons[index];
-            SetUpNavigation(button, m_Buttons[index - 1], m_Buttons[index + 1]);
-        }
+        //for (int index = 1; index < m_Buttons.Count - 1; index++)
+        //{
+        //    Button button = m_Buttons[index];
+        //    SetUpNavigation(button, m_Buttons[index - 1], m_Buttons[index + 1]);
+        //}
 
 
-        SetUpNavigation(m_Buttons[0], backButton, m_Buttons[1]);
-        SetUpNavigation(m_Buttons[m_Buttons.Count - 1], m_Buttons[m_Buttons.Count - 2], null);
+       // SetUpNavigation(m_Buttons[0], backButton, m_Buttons[1]);
+      //  SetUpNavigation(m_Buttons[m_Buttons.Count - 1], m_Buttons[m_Buttons.Count - 2], null);
 
        // mouseScroll.SetHasRightBuffer(rightBuffer != null);
     }

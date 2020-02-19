@@ -44,6 +44,6 @@ public class LevelChanger : MonoBehaviour
 
     public void onFadeInStart()
     {
-        GameObject.Find("GameController").GetComponent<SceneController>().stopScene();
+        GameObject.Find("GameController").GetComponent<SceneController>().stopScene(false);
     }
 }
