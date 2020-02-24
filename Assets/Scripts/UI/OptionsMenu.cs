@@ -14,6 +14,7 @@ public class OptionsMenu : MonoBehaviour
 
     public Slider musicSlider;
 
+    private Animator anim;
     private float mastPrevValue;
     private float sfxPrevValue;
     private float musicPrevValue;
@@ -24,6 +25,7 @@ public class OptionsMenu : MonoBehaviour
         mastPrevValue = 0;
         sfxPrevValue = 0;
         musicPrevValue = 0;
+        anim = GetComponent<Animator>();
     }
     public void showOptions()
     {
@@ -112,5 +114,23 @@ public class OptionsMenu : MonoBehaviour
             musicSlider.GetComponent<AudioSource>().Play();
             musicPrevValue = musicVolume;
         }
+    }
+
+    public void showConfirmationRestartProgress()
+    {
+        anim.SetBool("ShowRestart",true);
+    }
+    public void showButtonRestartProgress()
+    {
+        anim.SetBool("ShowRestart", false);
+    }
+
+    public void RestartProgress()
+    {
+        GetSliderVolumes(out masterVolume, out sfxVolume, out musicVolume);
+        GameManager.instance.restartProgress(masterVolume, sfxVolume, musicVolume);
+        GameObject.Find("LevelSelect").GetComponent<LevelSelectMenu>().resetProgress();
+        anim.SetBool("ShowRestart", false);
+
     }
 }

@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 1912528291624484273}
   - component: {fileID: 5876913025925020353}
   - component: {fileID: 1912528291624484277}
+  - component: {fileID: 8575881017434966642}
   m_Layer: 9
   m_Name: EnemyPatrol
   m_TagString: Enemy
@@ -156,6 +157,25 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.008552313}
   serializedVersion: 2
   m_Radius: 1.1346107
+--- !u!95 &8575881017434966642
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1912528291624484286}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: f35bb91aaed1ed2409517f61156eb1d9, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &7769760697648969736
 GameObject:
   m_ObjectHideFlags: 0

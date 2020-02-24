@@ -112,4 +112,58 @@ public class LevelSelectMenu : MonoBehaviour
         button.Initialize(item, mouseScroll);
         return button;
     }
+
+    public void resetProgress()
+    {
+
+
+        if (GameManager.instance == null)
+        {
+            return;
+        }
+       // m_Buttons = new List<Button>();
+        foreach (Transform child in layout.transform)
+        {
+            if (child.transform != rightBuffer)
+            {
+                Debug.Log(child.gameObject);
+                GameObject.Destroy(child.gameObject);
+            }
+        }
+
+        if (layout == null || selectionPrefab == null || m_LevelList == null)
+        {
+            return;
+        }
+
+        int amount = m_LevelList.Count;
+        for (int i = 0; i < amount; i++)
+        {
+
+            if (i > 0)
+            {
+                //If we haven't finished the previous level, we cant show this one
+                if (GameManager.instance.IsLevelCompleted(m_LevelList[i - 1].id))
+                {
+                    LevelSelectButton button = CreateButton(m_LevelList[i]);
+                    button.transform.SetParent(layout.transform);
+                    button.transform.localScale = Vector3.one;
+                    m_Buttons.Add(button.GetComponent<Button>());
+                }
+            }
+            else
+            {
+                LevelSelectButton button = CreateButton(m_LevelList[i]);
+                button.transform.SetParent(layout.transform);
+                button.transform.localScale = Vector3.one;
+                m_Buttons.Add(button.GetComponent<Button>());
+            }
+
+
+        }
+        if (rightBuffer != null)
+        {
+            rightBuffer.SetAsLastSibling();
+        }
+    }
 }

@@ -28,9 +28,9 @@ public class GameManager : MonoBehaviour
     protected virtual void Start()
     {
         SetVolumes(m_DataStore.masterVolume, m_DataStore.sfxVolume, m_DataStore.musicVolume, false);
-        
+
     }
-   	protected void Awake()
+    protected void Awake()
     {
         instance = this;
         LoadData();
@@ -155,5 +155,12 @@ public class GameManager : MonoBehaviour
 
         m_DataStore.CompleteLevel(levelId, starsEarned);
         SaveData();
+    }
+
+    public virtual void restartProgress(float master, float sfx, float music)
+    {
+        m_DataStore = new GameDataStore();
+        SetVolumes(master, sfx, music, true);
+        //m_DataStore.
     }
 }

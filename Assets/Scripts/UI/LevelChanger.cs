@@ -32,7 +32,8 @@ public class LevelChanger : MonoBehaviour
 
     public void onFadeComplete()
     {
-        SceneManager.LoadScene(levelToLoad);
+        GetComponent<InterstitialAd>().showAd(levelToLoad);
+        //SceneManager.LoadScene(levelToLoad);
     }
 
     public void onFadeInComplete()
