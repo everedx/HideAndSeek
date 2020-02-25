@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -21835,6 +21835,18 @@ MonoBehaviour:
   textFinishLevel: {fileID: 195644882}
   scorePanel: {fileID: 622955686}
   timeThresholdsScores: 1400000019000000280000003c00000046000000
+--- !u!114 &1064628041 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 629099524184237144, guid: e6c64b160afe79d4bbaecbb604ebfcb5,
+    type: 3}
+  m_PrefabInstance: {fileID: 3568480417012498318}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6333698f947f4d4987ba37a786ac000, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1182324906 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7658477121116336997, guid: bf451da986eadf840b9a8a63621a8c55,
@@ -22847,6 +22859,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: changeToLevel
+      objectReference: {fileID: 0}
+    - target: {fileID: 2629739019304548767, guid: bf451da986eadf840b9a8a63621a8c55,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1064628041}
+    - target: {fileID: 2629739019304548767, guid: bf451da986eadf840b9a8a63621a8c55,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: onAnimationFinish
       objectReference: {fileID: 0}
     - target: {fileID: 4501196257152032475, guid: bf451da986eadf840b9a8a63621a8c55,
         type: 3}
