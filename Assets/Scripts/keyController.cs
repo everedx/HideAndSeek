@@ -9,6 +9,9 @@ public class keyController : MonoBehaviour
 
     public string getDoorThatThisKeyCanOpen()
     {
-        return doorThatThisKeyCanOpen.name;
+        if(doorThatThisKeyCanOpen !=null)
+            return doorThatThisKeyCanOpen.name;
+        else
+            return null;
     }
 }

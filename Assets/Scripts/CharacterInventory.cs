@@ -67,15 +67,23 @@ public class CharacterInventory
     private void removeKeyInventory(string name)
     {
         int keys = getNumberOfKeys();
+        
         GameObject.Destroy(GameObject.Find(name+ "Inventory"));
         RectTransform rt;
         int children = inventoryBar.transform.childCount;
-
-        for (int i = 0; i < children; ++i)
+        int index = 0;
+        for (int i = 0; i < keys; ++i)
         {
-            Transform child = inventoryBar.transform.GetChild(i);
+            
+            if (inventoryBar.transform.GetChild(i).name.Equals(name + "Inventory"))
+            {
+                index = i + 1;
+            }
+       
+            Transform child = inventoryBar.transform.GetChild(index);
             rt = (RectTransform)child;
-            child.localPosition = new Vector2(1100 - i * rt.rect.width, 0);
+            child.localPosition = new Vector2(1100 - (i+1) * rt.rect.width, 0);
+            index++;
         }
            
 
