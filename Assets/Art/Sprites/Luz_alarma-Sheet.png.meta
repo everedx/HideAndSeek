@@ -1,46 +1,34 @@
 fileFormatVersion: 2
-guid: c2b3025c22e679945aaef36f3cf49c98
+guid: 26cab5d4df266a64584a975efe0efb49
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4451314073731898986
-    second: prota_iddle_animation-Sheet_0
+      213: -5889056845172885203
+    second: Luz_alarma-Sheet_0
   - first:
-      213: -517362195649272740
-    second: prota_iddle_animation-Sheet_1
+      213: -4224068559133139142
+    second: Luz_alarma-Sheet_1
   - first:
-      213: -4709300010745733725
-    second: prota_iddle_animation-Sheet_2
+      213: 7884402029759784836
+    second: Luz_alarma-Sheet_2
   - first:
-      213: -6593445932462897858
-    second: prota_iddle_animation-Sheet_3
+      213: 1161534471291322218
+    second: Luz_alarma-Sheet_3
   - first:
-      213: 6200412364079272974
-    second: prota_iddle_animation-Sheet_4
+      213: -6542285136933678520
+    second: Luz_alarma-Sheet_4
   - first:
-      213: -1491749980259658016
-    second: prota_iddle_animation-Sheet_5
+      213: 7595994095853089474
+    second: Luz_alarma-Sheet_5
   - first:
-      213: -1338762199629277581
-    second: prota_iddle_animation-Sheet_6
+      213: -3976385394303443566
+    second: Luz_alarma-Sheet_6
   - first:
-      213: 2500863130219213523
-    second: prota_iddle_animation-Sheet_7
+      213: -5969144629006180966
+    second: Luz_alarma-Sheet_7
   - first:
-      213: 293432555193254044
-    second: prota_iddle_animation-Sheet_8
-  - first:
-      213: -8822106793378263058
-    second: prota_iddle_animation-Sheet_9
-  - first:
-      213: 529374991346046172
-    second: prota_iddle_animation-Sheet_10
-  - first:
-      213: -4817370959294239353
-    second: prota_iddle_animation-Sheet_11
-  - first:
-      213: -8295139663041791927
-    second: prota_iddle_animation-Sheet_12
+      213: -1813335383472358794
+    second: Luz_alarma-Sheet_8
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -161,7 +149,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_0
+      name: Luz_alarma-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -175,14 +163,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05bf52922687814985052ea422cfac9
-      internalID: -4451314073731898986
+      spriteID: 54500a505f1591d4787c2379d67b7d4c
+      internalID: -5889056845172885203
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_1
+      name: Luz_alarma-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -196,14 +184,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98d355c0fe3af934f83865033f7a14c2
-      internalID: -517362195649272740
+      spriteID: 47b161ab3ab1fa04d8221acec7494696
+      internalID: -4224068559133139142
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_2
+      name: Luz_alarma-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -217,14 +205,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 035cb6b49a545ed47bd5b30244b8eb14
-      internalID: -4709300010745733725
+      spriteID: ee6ed646eb4512641b749845da0ffafa
+      internalID: 7884402029759784836
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_3
+      name: Luz_alarma-Sheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -238,14 +226,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cd4d3452dc67804e92681e70f1c96e4
-      internalID: -6593445932462897858
+      spriteID: 973d59fb14053494995a8c7df7a36049
+      internalID: 1161534471291322218
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_4
+      name: Luz_alarma-Sheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -259,14 +247,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6e0683e1749c89448731a134ec14756
-      internalID: 6200412364079272974
+      spriteID: 9286c6de35a2d7d4c9ab673554f068f3
+      internalID: -6542285136933678520
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_5
+      name: Luz_alarma-Sheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -280,14 +268,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 710751e497b730e49913c8759c475fe4
-      internalID: -1491749980259658016
+      spriteID: fd766d222485221429a4f65a65c473a5
+      internalID: 7595994095853089474
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_6
+      name: Luz_alarma-Sheet_6
       rect:
         serializedVersion: 2
         x: 192
@@ -301,14 +289,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a4e473aac9a62c47bcca31963845ff2
-      internalID: -1338762199629277581
+      spriteID: 24f9b680a7fcf3b49b440198fb10c87f
+      internalID: -3976385394303443566
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_7
+      name: Luz_alarma-Sheet_7
       rect:
         serializedVersion: 2
         x: 224
@@ -322,14 +310,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5a1b206f5f6a28448f2e683c9c3f527
-      internalID: 2500863130219213523
+      spriteID: 0666204fd0e388243baaff8d7836581d
+      internalID: -5969144629006180966
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_8
+      name: Luz_alarma-Sheet_8
       rect:
         serializedVersion: 2
         x: 256
@@ -343,92 +331,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ace0f936d6f2114188029d1e7bc3a40
-      internalID: 293432555193254044
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_9
-      rect:
-        serializedVersion: 2
-        x: 288
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 717cffcc4b7fc584ca7e20a658427150
-      internalID: -8822106793378263058
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_10
-      rect:
-        serializedVersion: 2
-        x: 320
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd88a6a071d783248bea02d871c245ab
-      internalID: 529374991346046172
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_11
-      rect:
-        serializedVersion: 2
-        x: 352
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5f66deb4596c39e42afc6c90f127856b
-      internalID: -4817370959294239353
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_12
-      rect:
-        serializedVersion: 2
-        x: 384
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8402a24a9fde30f4f9c3b2b9825772f8
-      internalID: -8295139663041791927
+      spriteID: 757e7c2f937b0f541b1a651485b925a4
+      internalID: -1813335383472358794
       vertices: []
       indices: 
       edges: []

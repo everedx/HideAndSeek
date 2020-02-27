@@ -16,9 +16,13 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject touch;
     [SerializeField] private GameObject threshold;
     [SerializeField] private GameObject inventoryBar;
+    [SerializeField] private GameObject actionAnimatorObject;
+    
+
     private CharacterInventory charInv;
     private Animator anim;
     private bool movementEnabled;
+    private Animator actionAnimator; 
 
     public bool MovementEnabled { get => movementEnabled; set => movementEnabled = value; }
 
@@ -38,6 +42,7 @@ public class CharacterController : MonoBehaviour
         positionJoysTick = new Vector3(0,0,0);
         charInv = new CharacterInventory(inventoryBar);
         anim = GetComponent<Animator>();
+        actionAnimator = actionAnimatorObject.GetComponent<Animator>();
         movementEnabled = true;
         
     }
@@ -53,6 +58,10 @@ public class CharacterController : MonoBehaviour
             movement();
         }
         fingersPreviousFrame = Input.touchCount;
+        if (actionAnimator.GetCurrentAnimatorStateInfo(0).normalizedTime >= 1.0f)
+        {
+            actionAnimator.enabled = false;
+        }
     }
 
     private void movement()
@@ -120,10 +129,20 @@ public class CharacterController : MonoBehaviour
                 //Debug.Log("Open");
                 collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 charInv.removeKey(collision.gameObject.name);
+                if (actionAnimator.enabled == false)
+                {
+                    actionAnimator.enabled = true;
+                    actionAnimator.Play("OpenDoor");
+                }
             }
             else
             {
-                //Debug.Log("Closed");
+                if (actionAnimator.enabled == false)
+                {
+                    actionAnimator.enabled = true;
+                    actionAnimator.Play("LockedDoor");
+                }
+                
             }
         }
 

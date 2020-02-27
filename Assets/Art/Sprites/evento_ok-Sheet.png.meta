@@ -1,46 +1,49 @@
 fileFormatVersion: 2
-guid: c2b3025c22e679945aaef36f3cf49c98
+guid: e9249e60be582a648a63d8bd426867ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4451314073731898986
-    second: prota_iddle_animation-Sheet_0
+      213: 6496648521481496958
+    second: evento_ok-Sheet_0
   - first:
-      213: -517362195649272740
-    second: prota_iddle_animation-Sheet_1
+      213: 1338929460782971384
+    second: evento_ok-Sheet_1
   - first:
-      213: -4709300010745733725
-    second: prota_iddle_animation-Sheet_2
+      213: 1322703486219071946
+    second: evento_ok-Sheet_2
   - first:
-      213: -6593445932462897858
-    second: prota_iddle_animation-Sheet_3
+      213: 9194654296518771241
+    second: evento_ok-Sheet_3
   - first:
-      213: 6200412364079272974
-    second: prota_iddle_animation-Sheet_4
+      213: 7950943757295495555
+    second: evento_ok-Sheet_4
   - first:
-      213: -1491749980259658016
-    second: prota_iddle_animation-Sheet_5
+      213: -7564574961654102357
+    second: evento_ok-Sheet_5
   - first:
-      213: -1338762199629277581
-    second: prota_iddle_animation-Sheet_6
+      213: 7316768510097973318
+    second: evento_ok-Sheet_6
   - first:
-      213: 2500863130219213523
-    second: prota_iddle_animation-Sheet_7
+      213: -422661942043662347
+    second: evento_ok-Sheet_7
   - first:
-      213: 293432555193254044
-    second: prota_iddle_animation-Sheet_8
+      213: -2148039683094000909
+    second: evento_ok-Sheet_8
   - first:
-      213: -8822106793378263058
-    second: prota_iddle_animation-Sheet_9
+      213: 89200380654482844
+    second: evento_ok-Sheet_9
   - first:
-      213: 529374991346046172
-    second: prota_iddle_animation-Sheet_10
+      213: -5534202639619211298
+    second: evento_ok-Sheet_10
   - first:
-      213: -4817370959294239353
-    second: prota_iddle_animation-Sheet_11
+      213: 8887174487264974751
+    second: evento_ok-Sheet_11
   - first:
-      213: -8295139663041791927
-    second: prota_iddle_animation-Sheet_12
+      213: -6053921263012755769
+    second: evento_ok-Sheet_12
+  - first:
+      213: -635813538607189183
+    second: evento_ok-Sheet_13
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -161,7 +164,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_0
+      name: evento_ok-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -175,14 +178,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b05bf52922687814985052ea422cfac9
-      internalID: -4451314073731898986
+      spriteID: 627c11634e3438146a5487e79878da0e
+      internalID: 6496648521481496958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_1
+      name: evento_ok-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -196,14 +199,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 98d355c0fe3af934f83865033f7a14c2
-      internalID: -517362195649272740
+      spriteID: 8191944efcc926a4fb60a6338a4d571b
+      internalID: 1338929460782971384
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_2
+      name: evento_ok-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -217,14 +220,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 035cb6b49a545ed47bd5b30244b8eb14
-      internalID: -4709300010745733725
+      spriteID: ec387bee232e9844083f29196d520e8f
+      internalID: 1322703486219071946
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_3
+      name: evento_ok-Sheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -238,14 +241,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7cd4d3452dc67804e92681e70f1c96e4
-      internalID: -6593445932462897858
+      spriteID: 6a6616d13a2bab64590c9db32bd47019
+      internalID: 9194654296518771241
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_4
+      name: evento_ok-Sheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -259,14 +262,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6e0683e1749c89448731a134ec14756
-      internalID: 6200412364079272974
+      spriteID: efda7dd034400ca479ec80468487b385
+      internalID: 7950943757295495555
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_5
+      name: evento_ok-Sheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -280,14 +283,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 710751e497b730e49913c8759c475fe4
-      internalID: -1491749980259658016
+      spriteID: e791ea0ad5a18ed41a3b357701799660
+      internalID: -7564574961654102357
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_6
+      name: evento_ok-Sheet_6
       rect:
         serializedVersion: 2
         x: 192
@@ -301,14 +304,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7a4e473aac9a62c47bcca31963845ff2
-      internalID: -1338762199629277581
+      spriteID: d599a425a26d60d47b2c8947a33a0cb5
+      internalID: 7316768510097973318
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_7
+      name: evento_ok-Sheet_7
       rect:
         serializedVersion: 2
         x: 224
@@ -322,14 +325,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c5a1b206f5f6a28448f2e683c9c3f527
-      internalID: 2500863130219213523
+      spriteID: db442726c9d289440899400683e3afff
+      internalID: -422661942043662347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_8
+      name: evento_ok-Sheet_8
       rect:
         serializedVersion: 2
         x: 256
@@ -343,14 +346,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ace0f936d6f2114188029d1e7bc3a40
-      internalID: 293432555193254044
+      spriteID: 2544d7411d0b9a34fa46a7f115ee4c98
+      internalID: -2148039683094000909
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_9
+      name: evento_ok-Sheet_9
       rect:
         serializedVersion: 2
         x: 288
@@ -364,14 +367,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 717cffcc4b7fc584ca7e20a658427150
-      internalID: -8822106793378263058
+      spriteID: 05d7d12c2d3a5c143b5d93e0db180c71
+      internalID: 89200380654482844
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_10
+      name: evento_ok-Sheet_10
       rect:
         serializedVersion: 2
         x: 320
@@ -385,14 +388,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd88a6a071d783248bea02d871c245ab
-      internalID: 529374991346046172
+      spriteID: 82edf4b8eccb5064ba0a4d952f3c6e43
+      internalID: -5534202639619211298
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_11
+      name: evento_ok-Sheet_11
       rect:
         serializedVersion: 2
         x: 352
@@ -406,14 +409,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f66deb4596c39e42afc6c90f127856b
-      internalID: -4817370959294239353
+      spriteID: 1b137ec85be8cfe45857bc9d6c4d7329
+      internalID: 8887174487264974751
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: prota_iddle_animation-Sheet_12
+      name: evento_ok-Sheet_12
       rect:
         serializedVersion: 2
         x: 384
@@ -427,8 +430,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8402a24a9fde30f4f9c3b2b9825772f8
-      internalID: -8295139663041791927
+      spriteID: 6cf80e4cc55d5b94fa6a36cfe7b5da6c
+      internalID: -6053921263012755769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evento_ok-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 416
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9147240ff1ef7ff48ab81686383d494f
+      internalID: -635813538607189183
       vertices: []
       indices: 
       edges: []
