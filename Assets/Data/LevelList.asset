@@ -13,6 +13,10 @@ MonoBehaviour:
   m_Name: LevelList
   m_EditorClassIdentifier: 
   levels:
+  - id: TutorialScene
+    name: Tutorial
+    description: Learn how to escape
+    sceneName: TutorialScene
   - id: Level1
     name: Level1
     description: Level 1

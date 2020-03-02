@@ -23,20 +23,24 @@ public class CameraMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector3 goalPos = heroObject.transform.position;
-        //goalPos.y = transform.position.y;
-        goalPos.z = -10;
+        if (heroObject.GetComponent<CharacterController>().MovementEnabled)
+        {
+            Vector3 goalPos = heroObject.transform.position;
+            //goalPos.y = transform.position.y;
+            goalPos.z = -10;
 
-        if (goalPos.x > limitRight)
-            goalPos.x = limitRight;
-        if (goalPos.x < limitLeft)
-            goalPos.x = limitLeft;
-        if (goalPos.y > limitUp)
-            goalPos.y = limitUp;
-        if (goalPos.y < limitDown)
-            goalPos.y = limitDown;
+            if (goalPos.x > limitRight)
+                goalPos.x = limitRight;
+            if (goalPos.x < limitLeft)
+                goalPos.x = limitLeft;
+            if (goalPos.y > limitUp)
+                goalPos.y = limitUp;
+            if (goalPos.y < limitDown)
+                goalPos.y = limitDown;
 
-        transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
+            transform.position = Vector3.SmoothDamp(transform.position, goalPos, ref velocity, smoothTime);
+        }
+        
     }
 
 

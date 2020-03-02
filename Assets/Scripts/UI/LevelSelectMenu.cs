@@ -61,7 +61,7 @@ public class LevelSelectMenu : MonoBehaviour
             if (i > 0)
             {
                 //If we haven't finished the previous level, we cant show this one
-                if (GameManager.instance.IsLevelCompleted(m_LevelList[i - 1].id))
+                if (GameManager.instance.IsLevelCompleted(m_LevelList[i - 1].id) || m_LevelList[i - 1].id.Equals("TutorialScene"))
                 {
                     LevelSelectButton button = CreateButton(m_LevelList[i]);
                     button.transform.SetParent(layout.transform);
@@ -143,7 +143,7 @@ public class LevelSelectMenu : MonoBehaviour
             if (i > 0)
             {
                 //If we haven't finished the previous level, we cant show this one
-                if (GameManager.instance.IsLevelCompleted(m_LevelList[i - 1].id))
+                if (GameManager.instance.IsLevelCompleted(m_LevelList[i - 1].id) || m_LevelList[i-1].id.Equals("TutorialScene"))
                 {
                     LevelSelectButton button = CreateButton(m_LevelList[i]);
                     button.transform.SetParent(layout.transform);
