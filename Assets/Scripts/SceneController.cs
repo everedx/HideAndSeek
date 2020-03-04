@@ -81,7 +81,7 @@ public class SceneController : MonoBehaviour
                 return timeThresholdsScores.Length-i;
         }
         if(secondsScore > timeThresholdsScores[timeThresholdsScores.Length-1])
-            return 0;
+            return timeThresholdsScores.Length;
         return 0;
     }
 }

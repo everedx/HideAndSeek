@@ -44,6 +44,18 @@ TextureImporter:
   - first:
       213: -635813538607189183
     second: evento_ok-Sheet_13
+  - first:
+      213: 3533684925280984677
+    second: evento_ok-Sheet_14
+  - first:
+      213: 368520189527114637
+    second: evento_ok-Sheet_15
+  - first:
+      213: -5945495197351688563
+    second: evento_ok-Sheet_16
+  - first:
+      213: 1233779747421308510
+    second: evento_ok-Sheet_17
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -73,7 +85,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -178,7 +190,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 627c11634e3438146a5487e79878da0e
+      spriteID: 801ea1ccc37f7424f99d47ec3c30f6cd
       internalID: 6496648521481496958
       vertices: []
       indices: 
@@ -199,7 +211,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8191944efcc926a4fb60a6338a4d571b
+      spriteID: 01d0207e444e8504b8d721037daf0fb1
       internalID: 1338929460782971384
       vertices: []
       indices: 
@@ -220,7 +232,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ec387bee232e9844083f29196d520e8f
+      spriteID: 6acc98cfef7854942b03e993c7ebea3f
       internalID: 1322703486219071946
       vertices: []
       indices: 
@@ -241,7 +253,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a6616d13a2bab64590c9db32bd47019
+      spriteID: 10da0c493d8a88741aaa4bac23fc9988
       internalID: 9194654296518771241
       vertices: []
       indices: 
@@ -262,7 +274,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: efda7dd034400ca479ec80468487b385
+      spriteID: 020dee4115a8518468801a84467f2f9e
       internalID: 7950943757295495555
       vertices: []
       indices: 
@@ -283,7 +295,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e791ea0ad5a18ed41a3b357701799660
+      spriteID: 44bef9c53d7554342a29d35dd38383b4
       internalID: -7564574961654102357
       vertices: []
       indices: 
@@ -304,7 +316,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d599a425a26d60d47b2c8947a33a0cb5
+      spriteID: cc8cf960b261a604ca0233a138e33123
       internalID: 7316768510097973318
       vertices: []
       indices: 
@@ -325,7 +337,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db442726c9d289440899400683e3afff
+      spriteID: 9b993c10698a1d544805d78f1ae561f5
       internalID: -422661942043662347
       vertices: []
       indices: 
@@ -346,7 +358,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2544d7411d0b9a34fa46a7f115ee4c98
+      spriteID: 66d6ad2d6c7a1904fb8db332545f1e4f
       internalID: -2148039683094000909
       vertices: []
       indices: 
@@ -367,7 +379,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 05d7d12c2d3a5c143b5d93e0db180c71
+      spriteID: ffad2914715375a46ad910675661112e
       internalID: 89200380654482844
       vertices: []
       indices: 
@@ -388,7 +400,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 82edf4b8eccb5064ba0a4d952f3c6e43
+      spriteID: 363edf676e0a96349bd08fdd32e0a371
       internalID: -5534202639619211298
       vertices: []
       indices: 
@@ -409,7 +421,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 1b137ec85be8cfe45857bc9d6c4d7329
+      spriteID: 2659f3c15f6d172428a196da278a76f0
       internalID: 8887174487264974751
       vertices: []
       indices: 
@@ -430,7 +442,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6cf80e4cc55d5b94fa6a36cfe7b5da6c
+      spriteID: 56606303923b1e640b607d333493daee
       internalID: -6053921263012755769
       vertices: []
       indices: 
@@ -451,8 +463,92 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9147240ff1ef7ff48ab81686383d494f
+      spriteID: cb79e13f4f12e6d45916b78ba4c6f084
       internalID: -635813538607189183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evento_ok-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 451007da84ac1424fa9d4a1575dc8615
+      internalID: 3533684925280984677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evento_ok-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 480
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c69dcf101c918a1488d1178379cabaa8
+      internalID: 368520189527114637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evento_ok-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71771858e6b726478dcaa3197d2c193
+      internalID: -5945495197351688563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evento_ok-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 544
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fe7483aeb234b44d9033c8e13b7faa9
+      internalID: 1233779747421308510
       vertices: []
       indices: 
       edges: []

@@ -44,6 +44,9 @@ TextureImporter:
   - first:
       213: -1339125662682332435
     second: evento_duda-Sheet_13
+  - first:
+      213: -2853181935796923338
+    second: evento_duda-Sheet_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -73,7 +76,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: -1
+    filterMode: 0
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -178,7 +181,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bc681e40e9f113b4f8a2af0d546bf8ef
+      spriteID: 3161ff67854bb264392e6041f2c55abc
       internalID: -7039095231517785053
       vertices: []
       indices: 
@@ -199,7 +202,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 120be3cd93c16d448b30eb4ad360806e
+      spriteID: ad432861d96f1fc4e8d4deda4e3f7ac4
       internalID: 7718209712213509235
       vertices: []
       indices: 
@@ -220,7 +223,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cf25a9afa2cbf4e469e8773e647b2f33
+      spriteID: d714aabd87fa70949974e233f06e2e5b
       internalID: 3802423647252921200
       vertices: []
       indices: 
@@ -241,7 +244,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b5c65d27a884c6042983dc40944892cc
+      spriteID: 2ae7bf02d28114b4384df6410bcfb4aa
       internalID: -8616093393971239436
       vertices: []
       indices: 
@@ -262,7 +265,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0e7b1d04f69f17a4a848bf302d0d328b
+      spriteID: 19bae0e5a9ba2b446b6a847b28e44067
       internalID: -5916866907993780445
       vertices: []
       indices: 
@@ -283,7 +286,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 14bc593412244944dacd7c94d9edc3a8
+      spriteID: f7bbb326551dbce4080d07f07334ad01
       internalID: -3896163457417379916
       vertices: []
       indices: 
@@ -304,7 +307,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: eecec24cd1563094ba987dde79166b26
+      spriteID: 940f8327eab771546bd44c2844a08c22
       internalID: -3861938112413382752
       vertices: []
       indices: 
@@ -325,7 +328,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e42db782a52bca644bca139376dc89d1
+      spriteID: 5615e0bb5ffa80548b1dffcf65aecf19
       internalID: 604370331386639785
       vertices: []
       indices: 
@@ -346,7 +349,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 689611e10d35064488476f8c3cddf48d
+      spriteID: 626b84b0a05d08d4bb9f954495d4a353
       internalID: -5177786055736023521
       vertices: []
       indices: 
@@ -367,7 +370,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6b31e2b0452a87c49aa517ee46eecf0c
+      spriteID: 20335b010d84c8b458ce5bf39017b5e0
       internalID: 5442814906567213588
       vertices: []
       indices: 
@@ -388,7 +391,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 27a3384b8f2008346b7d213abcbecf52
+      spriteID: 48bb56be5d776d34aa4a51752fab7a58
       internalID: -4443761292151562667
       vertices: []
       indices: 
@@ -409,7 +412,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5df6d638ae7352645af7cae73be24682
+      spriteID: ac89182c2d2a8fd4da40022d348b2e33
       internalID: -9183239212799111094
       vertices: []
       indices: 
@@ -430,7 +433,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 88e30770e7f9b5c4b8a45db52d1ce033
+      spriteID: 470d087ef99960a4a9e11b7df3f8579c
       internalID: -3829635324445406357
       vertices: []
       indices: 
@@ -451,8 +454,29 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4c369099a65209041aa75929ead6b486
+      spriteID: e508987e3c9018b438232e09cca1ead3
       internalID: -1339125662682332435
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: evento_duda-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a50e1bb4272eabe4aa4111f972fb5a47
+      internalID: -2853181935796923338
       vertices: []
       indices: 
       edges: []

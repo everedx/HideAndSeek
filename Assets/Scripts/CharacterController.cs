@@ -48,7 +48,11 @@ public class CharacterController : MonoBehaviour
     }
 
 
-
+    private void Update()
+    {
+        transform.GetChild(2).transform.rotation = Quaternion.Euler(0.0f, 0.0f, gameObject.transform.rotation.z * -1.0f);
+        transform.GetChild(2).transform.position = transform.position + new Vector3(0,3.29f,0);
+    }
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -62,6 +66,7 @@ public class CharacterController : MonoBehaviour
         {
             actionAnimator.enabled = false;
         }
+
     }
 
     private void movement()
@@ -167,6 +172,9 @@ public class CharacterController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
+            
+            
+
             GameObject levelChanger = GameObject.Find("LevelChanger");
             if (levelChanger != null)
             {
