@@ -22,6 +22,12 @@ public class MainCamera : MonoBehaviour
         buttonSkipAnimation.gameObject.SetActive(false);
         stopSequence = true;
         mustExecuteSequence = false;
+        //Control Tutorial 
+        //
+        //
+        //
+        //
+        //
     }
 
     private void Start()
