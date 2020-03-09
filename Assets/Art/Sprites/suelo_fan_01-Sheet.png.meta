@@ -1,34 +1,25 @@
 fileFormatVersion: 2
-guid: 26cab5d4df266a64584a975efe0efb49
+guid: c0d189c9bd1d4ce42a34604789a15c43
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5889056845172885203
-    second: Luz_alarma-Sheet_0
+      213: 2135106086292988050
+    second: suelo_fan_01-Sheet_0
   - first:
-      213: -4224068559133139142
-    second: Luz_alarma-Sheet_1
+      213: 3204765991129248043
+    second: suelo_fan_01-Sheet_1
   - first:
-      213: 7884402029759784836
-    second: Luz_alarma-Sheet_2
+      213: -264855119196954148
+    second: suelo_fan_01-Sheet_2
   - first:
-      213: 1161534471291322218
-    second: Luz_alarma-Sheet_3
+      213: -4629648261879690726
+    second: suelo_fan_01-Sheet_3
   - first:
-      213: -6542285136933678520
-    second: Luz_alarma-Sheet_4
+      213: 6061739777474174855
+    second: suelo_fan_01-Sheet_4
   - first:
-      213: 7595994095853089474
-    second: Luz_alarma-Sheet_5
-  - first:
-      213: -3976385394303443566
-    second: Luz_alarma-Sheet_6
-  - first:
-      213: -5969144629006180966
-    second: Luz_alarma-Sheet_7
-  - first:
-      213: -1813335383472358794
-    second: Luz_alarma-Sheet_8
+      213: 5292518920412025865
+    second: suelo_fan_01-Sheet_5
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -72,7 +63,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 20
+  spritePixelsToUnits: 17.9
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -149,7 +140,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luz_alarma-Sheet_0
+      name: suelo_fan_01-Sheet_0
       rect:
         serializedVersion: 2
         x: 0
@@ -163,14 +154,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 54500a505f1591d4787c2379d67b7d4c
-      internalID: -5889056845172885203
+      spriteID: c13861fb2ddc8494bb8dd373d6c88fea
+      internalID: 2135106086292988050
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luz_alarma-Sheet_1
+      name: suelo_fan_01-Sheet_1
       rect:
         serializedVersion: 2
         x: 32
@@ -184,14 +175,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 47b161ab3ab1fa04d8221acec7494696
-      internalID: -4224068559133139142
+      spriteID: deb2358131ceca642b16e98513f043d4
+      internalID: 3204765991129248043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luz_alarma-Sheet_2
+      name: suelo_fan_01-Sheet_2
       rect:
         serializedVersion: 2
         x: 64
@@ -205,14 +196,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ee6ed646eb4512641b749845da0ffafa
-      internalID: 7884402029759784836
+      spriteID: 2232ae2fde52f2f42a6818d24428556a
+      internalID: -264855119196954148
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luz_alarma-Sheet_3
+      name: suelo_fan_01-Sheet_3
       rect:
         serializedVersion: 2
         x: 96
@@ -226,14 +217,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 973d59fb14053494995a8c7df7a36049
-      internalID: 1161534471291322218
+      spriteID: eefe4bf2107a0b64c8fac148be9e51cc
+      internalID: -4629648261879690726
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luz_alarma-Sheet_4
+      name: suelo_fan_01-Sheet_4
       rect:
         serializedVersion: 2
         x: 128
@@ -247,14 +238,14 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9286c6de35a2d7d4c9ab673554f068f3
-      internalID: -6542285136933678520
+      spriteID: 8b608c5b63fff514ebd02c3aee216b14
+      internalID: 6061739777474174855
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luz_alarma-Sheet_5
+      name: suelo_fan_01-Sheet_5
       rect:
         serializedVersion: 2
         x: 160
@@ -268,71 +259,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fd766d222485221429a4f65a65c473a5
-      internalID: 7595994095853089474
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luz_alarma-Sheet_6
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 24f9b680a7fcf3b49b440198fb10c87f
-      internalID: -3976385394303443566
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luz_alarma-Sheet_7
-      rect:
-        serializedVersion: 2
-        x: 224
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0666204fd0e388243baaff8d7836581d
-      internalID: -5969144629006180966
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luz_alarma-Sheet_8
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 757e7c2f937b0f541b1a651485b925a4
-      internalID: -1813335383472358794
+      spriteID: 50349382e8de2c548b32652f18a8e66f
+      internalID: 5292518920412025865
       vertices: []
       indices: 
       edges: []

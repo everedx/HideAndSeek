@@ -22,12 +22,14 @@ public class MainCamera : MonoBehaviour
         buttonSkipAnimation.gameObject.SetActive(false);
         stopSequence = true;
         mustExecuteSequence = false;
+
         //Control Tutorial 
-        //
-        //
-        //
-        //
-        //
+        GameObject tuto = GameObject.Find("TutorialController");
+        if (tuto != null)
+        {
+            tuto.GetComponent<TutorialController>().startTutorialSequence();
+        }
+
     }
 
     private void Start()
@@ -43,8 +45,7 @@ public class MainCamera : MonoBehaviour
         if (mustExecuteSequence)
         {
             executeStartSequence();
-            //nextRequired = false;
-            //if (transform.position.x == startSequencePositions[sequenceIndex].x && transform.position.y == startSequencePositions[sequenceIndex].y)
+           
             if (Math.Abs(transform.position.x - startSequencePositions[sequenceIndex].x) < 0.1 && Math.Abs(transform.position.y - startSequencePositions[sequenceIndex].y) < 0.1)
             {
                 sequenceIndex++;
@@ -70,6 +71,7 @@ public class MainCamera : MonoBehaviour
     {
         mustExecuteSequence = true;
         nextRequired = true;
+        Debug.Log("Start Camera Sequence");
     }
 
 }

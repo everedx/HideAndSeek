@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5675520642347042305}
   - component: {fileID: 5675520642347042304}
   - component: {fileID: 868824972684872610}
-  - component: {fileID: 4404117660864660751}
+  - component: {fileID: 4045213086472588134}
   m_Layer: 12
-  m_Name: BarrierHorizontal
+  m_Name: BarrierFinal
   m_TagString: Door
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -72,7 +72,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 5
-  m_Sprite: {fileID: 2384919767224168843, guid: fb9c840f9d4296c4eb75c947a1f8adff,
+  m_Sprite: {fileID: -8030036523019880249, guid: 64262100e6685274eb23cf47fc075e05,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -101,7 +101,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6.4, y: 3.2}
+    oldSize: {x: 6.4, y: 3.25}
     newSize: {x: 1.28, y: 0.32}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -120,7 +120,7 @@ Animator:
   m_GameObject: {fileID: 5675520642347042311}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e88b5aa6964f9784e952781f4c6cb472, type: 2}
+  m_Controller: {fileID: 9100000, guid: 58cce6394a96b5243818065f5ce6a958, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -129,7 +129,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &4404117660864660751
+--- !u!114 &4045213086472588134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

@@ -132,7 +132,8 @@ public class CharacterController : MonoBehaviour
             if (charInv.keyExistInInventory(collision.gameObject.name))
             {
                 //Debug.Log("Open");
-                collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                //collision.gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                collision.gameObject.GetComponent<Animator>().SetTrigger("OpenDoor");
                 charInv.removeKey(collision.gameObject.name);
                 if (actionAnimator.enabled == false)
                 {
@@ -199,6 +200,20 @@ public class CharacterController : MonoBehaviour
             }
 
      
+        }
+
+        if (collision.gameObject.tag == "TutorialSpot")
+        {
+            GameObject tutoController = GameObject.Find("TutorialController");
+            if (tutoController != null)
+            {
+                tutoController.GetComponent<TutorialController>().spotTouched();
+
+            }
+            //Destroy Object
+            Destroy(collision.gameObject);
+
+
         }
 
     }

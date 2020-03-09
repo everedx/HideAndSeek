@@ -1,0 +1,1219 @@
+fileFormatVersion: 2
+guid: 64262100e6685274eb23cf47fc075e05
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8030036523019880249
+    second: Compuerta02-Sheet_0
+  - first:
+      213: -323334505669882644
+    second: Compuerta02-Sheet_1
+  - first:
+      213: 830669284792078574
+    second: Compuerta02-Sheet_2
+  - first:
+      213: 8903634289224792632
+    second: Compuerta02-Sheet_3
+  - first:
+      213: -786548827302592598
+    second: Compuerta02-Sheet_4
+  - first:
+      213: -4641482636184233679
+    second: Compuerta02-Sheet_5
+  - first:
+      213: -5870799221136271242
+    second: Compuerta02-Sheet_6
+  - first:
+      213: -7735771747092677556
+    second: Compuerta02-Sheet_7
+  - first:
+      213: 4015456625391525057
+    second: Compuerta02-Sheet_8
+  - first:
+      213: 1570385639572468041
+    second: Compuerta02-Sheet_9
+  - first:
+      213: -7487581188719070713
+    second: Compuerta02-Sheet_10
+  - first:
+      213: 300429518560482862
+    second: Compuerta02-Sheet_11
+  - first:
+      213: 3056278548490673864
+    second: Compuerta02-Sheet_12
+  - first:
+      213: 3382038304100853211
+    second: Compuerta02-Sheet_13
+  - first:
+      213: -6322761597143188964
+    second: Compuerta02-Sheet_14
+  - first:
+      213: -322371203811315336
+    second: Compuerta02-Sheet_15
+  - first:
+      213: -5175830362963918123
+    second: Compuerta02-Sheet_16
+  - first:
+      213: 4687380521870428342
+    second: Compuerta02-Sheet_17
+  - first:
+      213: -8586373501107662246
+    second: Compuerta02-Sheet_18
+  - first:
+      213: -233270260791047045
+    second: Compuerta02-Sheet_19
+  - first:
+      213: -3836269673253899596
+    second: Compuerta02-Sheet_20
+  - first:
+      213: 7105697422035888557
+    second: Compuerta02-Sheet_21
+  - first:
+      213: 4224229291159123617
+    second: Compuerta02-Sheet_22
+  - first:
+      213: -8573263705954778357
+    second: Compuerta02-Sheet_23
+  - first:
+      213: 3913862692694986407
+    second: Compuerta02-Sheet_24
+  - first:
+      213: 8792264611950680524
+    second: Compuerta02-Sheet_25
+  - first:
+      213: -3785863244198714622
+    second: Compuerta02-Sheet_26
+  - first:
+      213: -3822259768018420922
+    second: Compuerta02-Sheet_27
+  - first:
+      213: -3072557382106570591
+    second: Compuerta02-Sheet_28
+  - first:
+      213: -2712991272081767906
+    second: Compuerta02-Sheet_29
+  - first:
+      213: 8925682208817493773
+    second: Compuerta02-Sheet_30
+  - first:
+      213: -4834659731536845824
+    second: Compuerta02-Sheet_31
+  - first:
+      213: -8793900574057606154
+    second: Compuerta02-Sheet_32
+  - first:
+      213: 5382223166036155337
+    second: Compuerta02-Sheet_33
+  - first:
+      213: -8979660213917560564
+    second: Compuerta02-Sheet_34
+  - first:
+      213: -9059197975671443595
+    second: Compuerta02-Sheet_35
+  - first:
+      213: -3083032602360149042
+    second: Compuerta02-Sheet_36
+  - first:
+      213: -683144366130452459
+    second: Compuerta02-Sheet_37
+  - first:
+      213: -2489383536009583003
+    second: Compuerta02-Sheet_38
+  - first:
+      213: 978644880077966894
+    second: Compuerta02-Sheet_39
+  - first:
+      213: 474766201617558628
+    second: Compuerta02-Sheet_40
+  - first:
+      213: 6422175996329299705
+    second: Compuerta02-Sheet_41
+  - first:
+      213: 4080621474580039079
+    second: Compuerta02-Sheet_42
+  - first:
+      213: 6871671586168081732
+    second: Compuerta02-Sheet_43
+  - first:
+      213: 7104018960264033316
+    second: Compuerta02-Sheet_44
+  - first:
+      213: -6759570002386948857
+    second: Compuerta02-Sheet_45
+  - first:
+      213: -5101185475639372864
+    second: Compuerta02-Sheet_46
+  - first:
+      213: -1174539847079435073
+    second: Compuerta02-Sheet_47
+  - first:
+      213: 4176576863630016483
+    second: Compuerta02-Sheet_48
+  - first:
+      213: 2692919206283098671
+    second: Compuerta02-Sheet_49
+  - first:
+      213: -6539377527651210594
+    second: Compuerta02-Sheet_50
+  - first:
+      213: -6192909543484177550
+    second: Compuerta02-Sheet_51
+  - first:
+      213: 4635038694059582540
+    second: Compuerta02-Sheet_52
+  - first:
+      213: -3751521341908943226
+    second: Compuerta02-Sheet_53
+  - first:
+      213: 5567054620171756511
+    second: Compuerta02-Sheet_54
+  - first:
+      213: -789091489230708237
+    second: Compuerta02-Sheet_55
+  - first:
+      213: -8176841383320998222
+    second: Compuerta02-Sheet_56
+  - first:
+      213: 1459474018362958022
+    second: Compuerta02-Sheet_57
+  - first:
+      213: -5461190655911675969
+    second: Compuerta02-Sheet_58
+  - first:
+      213: 3690937763919529712
+    second: Compuerta02-Sheet_59
+  - first:
+      213: 8991415392985701753
+    second: Compuerta02-Sheet_60
+  - first:
+      213: -6052455397421336731
+    second: Compuerta02-Sheet_61
+  - first:
+      213: -5227773792210901278
+    second: Compuerta02-Sheet_62
+  - first:
+      213: 4531906629246796879
+    second: Compuerta02-Sheet_63
+  - first:
+      213: -7598654492146149331
+    second: Compuerta02-Sheet_64
+  - first:
+      213: 2290833208530157855
+    second: Compuerta02-Sheet_65
+  - first:
+      213: 7055816055014808435
+    second: Compuerta02-Sheet_66
+  - first:
+      213: -3856382637763879696
+    second: Compuerta02-Sheet_67
+  - first:
+      213: -8589789954468853250
+    second: Compuerta02-Sheet_68
+  - first:
+      213: 28841398914086338
+    second: Compuerta02-Sheet_69
+  - first:
+      213: 1483243224066246039
+    second: Compuerta02-Sheet_70
+  - first:
+      213: -7323753500025071635
+    second: Compuerta02-Sheet_71
+  - first:
+      213: -7243279990501128308
+    second: Compuerta02-Sheet_72
+  - first:
+      213: 4175840553755587008
+    second: Compuerta02-Sheet_73
+  - first:
+      213: -236981089676370780
+    second: Compuerta02-Sheet_74
+  - first:
+      213: -7439575074444574511
+    second: Compuerta02-Sheet_75
+  - first:
+      213: -8069208104817260497
+    second: Compuerta02-Sheet_76
+  - first:
+      213: -6647727384040530918
+    second: Compuerta02-Sheet_77
+  - first:
+      213: -203820959386191321
+    second: Compuerta02-Sheet_78
+  - first:
+      213: -771941611020809563
+    second: Compuerta02-Sheet_79
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 10
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: iPhone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c93d0037b327b6149b97d6b701c2e0d9
+      internalID: -8030036523019880249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6203a8d031498524ca10d1f99c3dd6c3
+      internalID: -323334505669882644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 362395fd0a4300240bdd11750145eca8
+      internalID: 830669284792078574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f5345f6ab7bbf34aa49d0c73ec2ec60
+      internalID: 8903634289224792632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2483a616bf182b048b5af9c57ea3f6d5
+      internalID: -786548827302592598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 47443a53a0cf37647bc70fb0ce5d36c0
+      internalID: -4641482636184233679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57bb97472d6c6cb498553069f2536d90
+      internalID: -5870799221136271242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac483bf55ce43543aaa72b86a967cdf
+      internalID: -7735771747092677556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 731b8b02abc76c44a916b99ad0349831
+      internalID: 4015456625391525057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb76f7d9c71d8144fa2d6c4972d3c7e4
+      internalID: 1570385639572468041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 101df60dd3415d944986430ca8c8e95a
+      internalID: -7487581188719070713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a1451e98380d1e45ac92135abb65582
+      internalID: 300429518560482862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6517945e900bd204db66446e3ea5e83e
+      internalID: 3056278548490673864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29cc7c13187257a4895326547bb59661
+      internalID: 3382038304100853211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab93fd098a367a141831d7664a92a99c
+      internalID: -6322761597143188964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5de25319668c8ce42a9d5df863d0ebad
+      internalID: -322371203811315336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71766be0a3227104791187a8a3cd4408
+      internalID: -5175830362963918123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393929bced29b5f4991a5824ac120843
+      internalID: 4687380521870428342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_18
+      rect:
+        serializedVersion: 2
+        x: 1152
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bebde6bfc89d3f2499936f9d04544033
+      internalID: -8586373501107662246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_19
+      rect:
+        serializedVersion: 2
+        x: 1216
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 20559764bbfccad4a85ed4cab15028b7
+      internalID: -233270260791047045
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_20
+      rect:
+        serializedVersion: 2
+        x: 1280
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 752c2c85f648690498dddd12c7ef3def
+      internalID: -3836269673253899596
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_21
+      rect:
+        serializedVersion: 2
+        x: 1344
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af92a5952953bdc4889c3c62bb59b4cc
+      internalID: 7105697422035888557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_22
+      rect:
+        serializedVersion: 2
+        x: 1408
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb127ec8760ee564189e56d3233555b9
+      internalID: 4224229291159123617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_23
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3aef7d7f2c21845a066ea418483985
+      internalID: -8573263705954778357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_24
+      rect:
+        serializedVersion: 2
+        x: 1536
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fb419e9610703c44baf628d025f127e
+      internalID: 3913862692694986407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_25
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 83ac2f9d8c950464e893c991b078af28
+      internalID: 8792264611950680524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_26
+      rect:
+        serializedVersion: 2
+        x: 1664
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ffaa46275174b746a543388e768ad57
+      internalID: -3785863244198714622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_27
+      rect:
+        serializedVersion: 2
+        x: 1728
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02aef50dfe0af7341987a30849789333
+      internalID: -3822259768018420922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_28
+      rect:
+        serializedVersion: 2
+        x: 1792
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40706371635a29c4eaf4500a8c03ab8b
+      internalID: -3072557382106570591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_29
+      rect:
+        serializedVersion: 2
+        x: 1856
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6f8ec507697014e80650f10e6c9730
+      internalID: -2712991272081767906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_30
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94ef00203d7c23e4b9f5c0c0b35d637c
+      internalID: 8925682208817493773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_31
+      rect:
+        serializedVersion: 2
+        x: 1984
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4df3c8723d0e84b4d8582750d03a042d
+      internalID: -4834659731536845824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_32
+      rect:
+        serializedVersion: 2
+        x: 2048
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a71f700b9c47442ae498c590a2aeef
+      internalID: -8793900574057606154
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_33
+      rect:
+        serializedVersion: 2
+        x: 2112
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662f5c219f6f2724c87ad87099aa6af9
+      internalID: 5382223166036155337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_34
+      rect:
+        serializedVersion: 2
+        x: 2176
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11c37cf5acbb15443b49700562a05fb4
+      internalID: -8979660213917560564
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_35
+      rect:
+        serializedVersion: 2
+        x: 2240
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3377a0993008cb74abcd520431379999
+      internalID: -9059197975671443595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_36
+      rect:
+        serializedVersion: 2
+        x: 2304
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 381849d9d4804594b9257fad017cd0f9
+      internalID: -3083032602360149042
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_37
+      rect:
+        serializedVersion: 2
+        x: 2368
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f748bd80eab00549896321c9a6df160
+      internalID: -683144366130452459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_38
+      rect:
+        serializedVersion: 2
+        x: 2432
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a262e391dbfdfe34782de0a3001d5a28
+      internalID: -2489383536009583003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Compuerta02-Sheet_39
+      rect:
+        serializedVersion: 2
+        x: 2496
+        y: 0
+        width: 64
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2e73e2815fe9a44aa38b4a5882537c9
+      internalID: 978644880077966894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

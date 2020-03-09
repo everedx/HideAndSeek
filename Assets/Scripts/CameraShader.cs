@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.LWRP;
 
 public class CameraShader : MonoBehaviour
 {
-    public Shader shader;
+    
     //public float vignetteSizeMax = 2f;
     //public float vignetteSizeMin = 1f;
     //public float vignetteSmoothness = 0.6f;
