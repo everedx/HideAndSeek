@@ -22,8 +22,8 @@ public class CharacterController : MonoBehaviour
     private CharacterInventory charInv;
     private Animator anim;
     private bool movementEnabled;
-    private Animator actionAnimator; 
-
+    private Animator actionAnimator;
+    private Vector3 iniPosition;
     public bool MovementEnabled { get => movementEnabled; set => movementEnabled = value; }
 
     // private GameObject touch2
@@ -44,6 +44,7 @@ public class CharacterController : MonoBehaviour
         anim = GetComponent<Animator>();
         actionAnimator = actionAnimatorObject.GetComponent<Animator>();
         movementEnabled = true;
+        iniPosition = transform.position;
         
     }
 
@@ -140,6 +141,15 @@ public class CharacterController : MonoBehaviour
                     actionAnimator.enabled = true;
                     actionAnimator.Play("OpenDoor");
                 }
+
+                GameObject tutoController = GameObject.Find("TutorialController");
+                if (tutoController != null)
+                {
+                    if (tutoController.GetComponent<TutorialController>().currentStep().Equals("DoorKey"))
+                        tutoController.GetComponent<TutorialController>().finishStepInterface();
+
+                }
+
             }
             else
             {
@@ -148,7 +158,14 @@ public class CharacterController : MonoBehaviour
                     actionAnimator.enabled = true;
                     actionAnimator.Play("LockedDoor");
                 }
-                
+
+                GameObject tutoController = GameObject.Find("TutorialController");
+                if (tutoController != null)
+                {
+                    if(tutoController.GetComponent<TutorialController>().currentStep().Equals("DoorFail"))
+                        tutoController.GetComponent<TutorialController>().finishStepInterface();
+
+                }
             }
         }
 
@@ -173,18 +190,47 @@ public class CharacterController : MonoBehaviour
         }
         if (collision.gameObject.tag == "Enemy")
         {
-            
-            
 
-            GameObject levelChanger = GameObject.Find("LevelChanger");
-            if (levelChanger != null)
+            GameObject tutoController = GameObject.Find("TutorialController");
+            if (tutoController != null)
             {
-                m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
-                Scene scene = SceneManager.GetActiveScene();
-               
-                GameObject.Find("GameController").GetComponent<SceneController>().stopScene(false);
-                GameObject.Find("LostMenu").GetComponent<LostMenu>().showLostMenu();
+                
+                
+                if (tutoController.GetComponent<TutorialController>().currentStep().Contains("Guard"))
+                {
+                    transform.position = iniPosition;
+                    tutoController.GetComponent<TutorialController>().finishStepInterface();
+                    
+                }
+                else
+                {
+                    GameObject levelChanger = GameObject.Find("LevelChanger");
+                    if (levelChanger != null)
+                    {
+                        m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
+                        Scene scene = SceneManager.GetActiveScene();
+
+                        GameObject.Find("GameController").GetComponent<SceneController>().stopScene(false);
+                        GameObject.Find("LostMenu").GetComponent<LostMenu>().showLostMenu();
+                    }
+                }
+
             }
+            else
+            {
+                GameObject levelChanger = GameObject.Find("LevelChanger");
+                if (levelChanger != null)
+                {
+                    m_OrthographicCamera.GetComponent<CameraShader>().changeEnemiesChasing(-50);
+                    Scene scene = SceneManager.GetActiveScene();
+
+                    GameObject.Find("GameController").GetComponent<SceneController>().stopScene(false);
+                    GameObject.Find("LostMenu").GetComponent<LostMenu>().showLostMenu();
+                }
+            }
+
+
+            
 
           
         }
@@ -207,7 +253,7 @@ public class CharacterController : MonoBehaviour
             GameObject tutoController = GameObject.Find("TutorialController");
             if (tutoController != null)
             {
-                tutoController.GetComponent<TutorialController>().spotTouched();
+                tutoController.GetComponent<TutorialController>().finishStepInterface();
 
             }
             //Destroy Object

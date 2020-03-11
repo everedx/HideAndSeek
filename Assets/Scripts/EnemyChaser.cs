@@ -45,6 +45,7 @@ public class EnemyChaser : MonoBehaviour
     private bool patrolGoingToDestination;
     Vector2 prevVector;
     Vector2 currentVector;
+    private GameObject fovObject;
     
 
     //ComeBack mode
@@ -602,5 +603,26 @@ public class EnemyChaser : MonoBehaviour
         Quaternion qua = Quaternion.Euler(0, 0, newAngle);
         //Debug.Log(qua);
         transform.rotation = qua;
+    }
+
+
+    public void setState(int state)
+    {
+        prevState = (States)state;
+        this.state = (States)state;
+    }
+
+    public void setFOVObject(GameObject fov)
+    {
+        fovObject = fov;
+    }
+
+    public void disableFOV()
+    {
+        fovObject.SetActive(false);
+    }
+    public void enableFOV()
+    {
+        fovObject.SetActive(true);
     }
 }

@@ -25,6 +25,8 @@ public class TutorialController : MonoBehaviour
     [SerializeField] private Camera cam;
     private AudioSource audioSource;
     private Vector3 iniCamPos;
+    private Vector3 iniGuard1pos;
+    private Vector3 iniGuard2pos;
     private int indexTuto;
     private float timerTextDisplay;
     private bool showText;
@@ -35,6 +37,7 @@ public class TutorialController : MonoBehaviour
     private bool startNextStep;
     private bool continueNextStep;
     private float timerToWait;
+    
     void Start()
     {
         indexTuto = 0;
@@ -48,16 +51,23 @@ public class TutorialController : MonoBehaviour
         timerToWait = 0.1f;
         audioSource = GetComponent<AudioSource>();
         iniCamPos = cam.transform.position;
+        iniGuard1pos = guard1.transform.position;
+        iniGuard2pos = guard2.transform.position;
     }
 
     void LateUpdate()
     {
         if (tutoActive)
         {
+            
             if (startNextStep)
+            {
+                continueNextStep = true;
                 setTextToDisplayTuto(indexTuto);
+            }
             if (continueNextStep)
                 prepareStep(indexTuto);
+
 
 
             if (showText)
@@ -80,7 +90,11 @@ public class TutorialController : MonoBehaviour
             vJoystickTuto1.SetActive(true);
             vJoystickTuto2.SetActive(true);
             cam.transform.position = iniCamPos;
-}
+        }
+        else
+        {
+            cam.transform.position = tutorialCameraSequences[tutoIndex];
+        }
     }
 
     private void displayTutoText()
@@ -111,6 +125,7 @@ public class TutorialController : MonoBehaviour
 
     private void prepareStep(int indexStep)
     {
+        continueNextStep = false;
         switch (tutorialSteps[indexStep])
         {
             case "Move1":
@@ -118,6 +133,26 @@ public class TutorialController : MonoBehaviour
                 break;
             case "Move2":
                 spot2.SetActive(true);
+                break;
+            case "DoorFail":
+                door.SetActive(true);
+            break;
+            case "DoorKey":
+                key1.SetActive(true);
+                break;
+            case "Guard1":
+                guard1.SetActive(true);
+                break;
+            case "Guard2":
+                guard2.SetActive(true);
+                break;
+            case "Escape":
+                guard1.GetComponent<EnemyChaser>().enableFOV();
+                guard2.GetComponent<EnemyChaser>().enableFOV();
+                guard1.SetActive(true);
+                guard2.SetActive(true);
+                
+                keyExit.SetActive(true);
                 break;
             default:
                 Debug.Log("Tutorial Not Implemented");
@@ -138,6 +173,38 @@ public class TutorialController : MonoBehaviour
                 break;
             case "Move2":
                 spot2.SetActive(false);
+                indexTuto++;
+                startNextStep = true;
+                continueNextStep = false;
+                break;
+            case "DoorFail":
+                indexTuto++;
+                startNextStep = true;
+                continueNextStep = false;
+                break;
+            case "DoorKey":
+                indexTuto++;
+                startNextStep = true;
+                continueNextStep = false;
+                break;
+            case "Guard1":
+                guard1.SetActive(false);
+                guard1.transform.position = iniGuard1pos;
+                guard1.GetComponent<EnemyChaser>().disableFOV();
+                guard1.GetComponent<EnemyChaser>().setState(0);
+                cam.GetComponent<CameraShader>().setEnemiesChasing(0);
+                
+                indexTuto++;
+                startNextStep = true;
+                continueNextStep = false;
+                break;
+            case "Guard2":
+                guard2.SetActive(false);
+                guard2.transform.position = iniGuard2pos;
+                guard2.GetComponent<EnemyChaser>().disableFOV();
+                guard2.GetComponent<EnemyChaser>().setState(0);
+                cam.GetComponent<CameraShader>().setEnemiesChasing(0);
+                
                 indexTuto++;
                 startNextStep = true;
                 continueNextStep = false;
@@ -163,12 +230,18 @@ public class TutorialController : MonoBehaviour
         textComponentInstructions.enabled = false;
         textComponentInstructions.text = "";
         showText = false;
-        continueNextStep = true;
     }
 
-    public void spotTouched()
+    public void finishStepInterface()
     {
         finishStep();
     }
+
+    public string currentStep()
+    {
+        return tutorialSteps[indexTuto];
+    }
+
+
 
 }

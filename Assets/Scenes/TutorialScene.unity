@@ -97,7 +97,7 @@ LightmapSettings:
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -498,7 +498,7 @@ PrefabInstance:
     - target: {fileID: 8933642004377591618, guid: 5b2e19edd01ce024591a229c3a1f5fb8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -32.78
+      value: -18.95
       objectReference: {fileID: 0}
     - target: {fileID: 8933642004377591618, guid: 5b2e19edd01ce024591a229c3a1f5fb8,
         type: 3}
@@ -554,7 +554,7 @@ PrefabInstance:
         type: 3}
       propertyPath: doorThatThisKeyCanOpen
       value: 
-      objectReference: {fileID: 348930391}
+      objectReference: {fileID: 515450363}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5b2e19edd01ce024591a229c3a1f5fb8, type: 3}
 --- !u!1001 &325737836
@@ -568,16 +568,16 @@ PrefabInstance:
         type: 3}
       propertyPath: doorThatThisKeyCanOpen
       value: 
-      objectReference: {fileID: 515450363}
+      objectReference: {fileID: 348930391}
     - target: {fileID: 7106383094076334755, guid: c587610e3da9bc8419482ec452582764,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.53
+      value: -33.21
       objectReference: {fileID: 0}
     - target: {fileID: 7106383094076334755, guid: c587610e3da9bc8419482ec452582764,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -11.29
+      value: 3.57
       objectReference: {fileID: 0}
     - target: {fileID: 7106383094076334755, guid: c587610e3da9bc8419482ec452582764,
         type: 3}
@@ -807,12 +807,12 @@ PrefabInstance:
     - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 18.51
+      value: -28
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
@@ -832,22 +832,32 @@ PrefabInstance:
     - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.7071068
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.7071068
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 5675520642347042306, guid: c10ae867b8b6f8d4e853616180bbc1f8,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042311, guid: c10ae867b8b6f8d4e853616180bbc1f8,
         type: 3}
       propertyPath: m_Name
-      value: BarrierHorizontal (1)
+      value: BarrierCorridor
+      objectReference: {fileID: 0}
+    - target: {fileID: 5675520642347042311, guid: c10ae867b8b6f8d4e853616180bbc1f8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c10ae867b8b6f8d4e853616180bbc1f8, type: 3}
@@ -1395,12 +1405,12 @@ PrefabInstance:
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -28.01
+      value: 18.69
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.504
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
@@ -1420,12 +1430,12 @@ PrefabInstance:
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
       propertyPath: m_LocalRotation.z
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
@@ -1445,7 +1455,7 @@ PrefabInstance:
     - target: {fileID: 5675520642347042306, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 180
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 5675520642347042311, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
@@ -1455,7 +1465,7 @@ PrefabInstance:
     - target: {fileID: 5675520642347042311, guid: 784f31ea787f9884db75b03ad633bed3,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 784f31ea787f9884db75b03ad633bed3, type: 3}
@@ -1505,8 +1515,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 197.1}
-  m_SizeDelta: {x: 1856.37, y: 307}
+  m_AnchoredPosition: {x: 0, y: 208}
+  m_SizeDelta: {x: 1856.37, y: 347.72}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &791692300
 MonoBehaviour:
@@ -80997,21 +81007,22 @@ MonoBehaviour:
   - Try to open the door!
   - Oops!! You need the key to open the door!
   - The guards will follow if they see you. If they lose you, they will try to look
-    for you and after some second they will be back to their duties. If they catch
-    your character, you will need to start over and over again...
+    for you and after some seconds they will be back to their duties. If they catch
+    your character, you will need to start over and over again. Taunt him!
   - They can be guarding a spot, or they can be patrolling like this one, be careful!
+    Taunt him!!
   - Find the green key and escape the tutorial to start your adventure!
   tutorialCameraSequences:
   - {x: -7, y: -7.2, z: -10}
   - {x: -17.21, y: 9.29, z: -10}
-  - {x: -28, y: 0.49, z: -10}
-  - {x: -20.53, y: -11.29, z: -10}
+  - {x: -20, y: 0.49, z: -10}
+  - {x: -31, y: 4, z: -10}
   - {x: 2.8, y: -7.1, z: -10}
   - {x: 6.9, y: 17.1, z: -10}
   - {x: 24.25, y: 2.81, z: -10}
   guard1: {fileID: 1442450039}
   guard2: {fileID: 766460526}
-  door: {fileID: 515450363}
+  door: {fileID: 348930391}
   key1: {fileID: 1062724964}
   keyExit: {fileID: 1465099406}
   spot1: {fileID: 927767258}
@@ -81505,12 +81516,12 @@ PrefabInstance:
     - target: {fileID: 3568480416627296014, guid: e6c64b160afe79d4bbaecbb604ebfcb5,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -16.5
+      value: -16.19
       objectReference: {fileID: 0}
     - target: {fileID: 3568480416627296014, guid: e6c64b160afe79d4bbaecbb604ebfcb5,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -4.1
+      value: -3.95
       objectReference: {fileID: 0}
     - target: {fileID: 3568480416627296014, guid: e6c64b160afe79d4bbaecbb604ebfcb5,
         type: 3}

@@ -176,6 +176,7 @@ public class FieldOfView : MonoBehaviour
     {
         this.spawner = spawner;
         eChaser = spawner.GetComponent<EnemyChaser>();
+        eChaser.setFOVObject(gameObject);
     }
 
 

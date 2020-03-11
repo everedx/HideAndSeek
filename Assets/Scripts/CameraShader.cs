@@ -89,6 +89,11 @@ public class CameraShader : MonoBehaviour
         enemiesChasing = enemiesChasing + value;
     }
 
+    public void setEnemiesChasing(int value)
+    {
+        enemiesChasing =  value;
+    }
+
 
 
 }
