@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doorThatThisKeyCanOpen: {fileID: 0}
+  pickUpSound: {fileID: 8300000, guid: d114d18c6d08ffa4cbc0a7a486fa404b, type: 3}
 --- !u!95 &337338112911809420
 Animator:
   serializedVersion: 3

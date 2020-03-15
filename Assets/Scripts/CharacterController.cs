@@ -17,8 +17,8 @@ public class CharacterController : MonoBehaviour
     [SerializeField] private GameObject threshold;
     [SerializeField] private GameObject inventoryBar;
     [SerializeField] private GameObject actionAnimatorObject;
-    
 
+    private AudioSource aSource;
     private CharacterInventory charInv;
     private Animator anim;
     private bool movementEnabled;
@@ -45,6 +45,7 @@ public class CharacterController : MonoBehaviour
         actionAnimator = actionAnimatorObject.GetComponent<Animator>();
         movementEnabled = true;
         iniPosition = transform.position;
+        aSource = GetComponent<AudioSource>();
         
     }
 
@@ -140,6 +141,7 @@ public class CharacterController : MonoBehaviour
                 {
                     actionAnimator.enabled = true;
                     actionAnimator.Play("OpenDoor");
+                    collision.gameObject.GetComponent<DoorScript>().soundOpen();
                 }
 
                 GameObject tutoController = GameObject.Find("TutorialController");
@@ -157,6 +159,7 @@ public class CharacterController : MonoBehaviour
                 {
                     actionAnimator.enabled = true;
                     actionAnimator.Play("LockedDoor");
+                    collision.gameObject.GetComponent<DoorScript>().soundLocked();
                 }
 
                 GameObject tutoController = GameObject.Find("TutorialController");
@@ -175,6 +178,8 @@ public class CharacterController : MonoBehaviour
     {
         if (collision.gameObject.tag == "Key")
         {
+            //SFX
+            aSource.PlayOneShot(collision.gameObject.GetComponent<keyController>().soundPickUp());
             //Add Key to inventory (Reference to the door that it opens)
             string doorToOpen = collision.gameObject.GetComponent<keyController>().getDoorThatThisKeyCanOpen();
             if(doorToOpen!= null)

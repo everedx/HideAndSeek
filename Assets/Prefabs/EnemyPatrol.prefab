@@ -98,8 +98,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93a0de9bc7708864799481b5a046e1dc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 5
-  speedWhileChasing: 7.5
+  speed: 3
+  speedWhileChasing: 5
   staticSightDirection: 0
   playerDetected: 0
   patrolXDistance: 0

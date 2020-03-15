@@ -435,7 +435,7 @@ public class EnemyChaser : MonoBehaviour
             adjustRotation(move);
             origin = origin + move * speedWhileChasing * Time.deltaTime;
             rBody.MovePosition(origin);
-            if ((transform.position.x >= nextPoint.x - 0.5f || transform.position.x <= nextPoint.x + 0.5f) && (transform.position.y >= nextPoint.y-0.5f || transform.position.y <= nextPoint.y + 0.5f))
+            if ((transform.position.x >= nextPoint.x - 0.01f || transform.position.x <= nextPoint.x + 0.01f) && (transform.position.y >= nextPoint.y-0.01f || transform.position.y <= nextPoint.y + 0.01f))
             {
                 forceNext = true;
             }

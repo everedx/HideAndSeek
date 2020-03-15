@@ -5,7 +5,7 @@ using UnityEngine.Experimental.Rendering.LWRP;
 
 public class CameraShader : MonoBehaviour
 {
-    
+
     //public float vignetteSizeMax = 2f;
     //public float vignetteSizeMin = 1f;
     //public float vignetteSmoothness = 0.6f;
@@ -17,8 +17,9 @@ public class CameraShader : MonoBehaviour
     private int enemiesChasing;
     private Light2D[] lightCharacter;
     private float valueColors;
-   //Material material;
-
+    //Material material;
+    [SerializeField] AudioClip audioClip;
+    AudioSource aSource;
     // Use this for initialization
     void Start()
     {
@@ -28,6 +29,7 @@ public class CameraShader : MonoBehaviour
 
         //material = new Material(shader);
         lightCharacter = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light2D>() ;
+        aSource = GameObject.Find("CanvasHero").GetComponent<AudioSource>();
     }
 
     //private void OnRenderImage(RenderTexture source, RenderTexture destination)
@@ -84,9 +86,14 @@ public class CameraShader : MonoBehaviour
         }
     }
 
+
     public void changeEnemiesChasing(int value)
     {
         enemiesChasing = enemiesChasing + value;
+        if (value > 0 && enemiesChasing == 1)
+        {
+            aSource.PlayOneShot(audioClip);
+        }
     }
 
     public void setEnemiesChasing(int value)

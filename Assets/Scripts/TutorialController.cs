@@ -151,7 +151,9 @@ public class TutorialController : MonoBehaviour
                 guard2.GetComponent<EnemyChaser>().enableFOV();
                 guard1.SetActive(true);
                 guard2.SetActive(true);
-                
+                guard1.GetComponent<EnemyChaser>().setState(0);
+                guard2.GetComponent<EnemyChaser>().setState(0);
+                cam.GetComponent<CameraShader>().setEnemiesChasing(0);
                 keyExit.SetActive(true);
                 break;
             default:
@@ -188,10 +190,10 @@ public class TutorialController : MonoBehaviour
                 continueNextStep = false;
                 break;
             case "Guard1":
+                guard1.GetComponent<EnemyChaser>().setState(0);
                 guard1.SetActive(false);
                 guard1.transform.position = iniGuard1pos;
                 guard1.GetComponent<EnemyChaser>().disableFOV();
-                guard1.GetComponent<EnemyChaser>().setState(0);
                 cam.GetComponent<CameraShader>().setEnemiesChasing(0);
                 
                 indexTuto++;
@@ -199,10 +201,10 @@ public class TutorialController : MonoBehaviour
                 continueNextStep = false;
                 break;
             case "Guard2":
+                guard2.GetComponent<EnemyChaser>().setState(0);
                 guard2.SetActive(false);
                 guard2.transform.position = iniGuard2pos;
                 guard2.GetComponent<EnemyChaser>().disableFOV();
-                guard2.GetComponent<EnemyChaser>().setState(0);
                 cam.GetComponent<CameraShader>().setEnemiesChasing(0);
                 
                 indexTuto++;
