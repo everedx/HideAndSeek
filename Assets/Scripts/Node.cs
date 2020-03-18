@@ -72,7 +72,7 @@ public class Node {
 
 	public void SetColor(Color color)
 	{
-		//Debug.transform.GetComponent<SpriteRenderer> ().color = color; Debug
+        Debug.transform.GetComponent<SpriteRenderer>().color = color;//; Debug
 	}
 
 	//Cull nodes if they don't have enough valid connection points (3)

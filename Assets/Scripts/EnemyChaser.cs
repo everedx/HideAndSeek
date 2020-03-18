@@ -46,13 +46,13 @@ public class EnemyChaser : MonoBehaviour
     Vector2 prevVector;
     Vector2 currentVector;
     private GameObject fovObject;
-    
+
 
     //ComeBack mode
     [SerializeField] private int secondsToGoBackToPatrol;
     private float secondsToGoBackToPatrolCounter;
 
-   
+
 
     public Vector2 WorldPosPlayer { get => worldPosPlayer; set => worldPosPlayer = value; }
     private enum Directions
@@ -66,8 +66,8 @@ public class EnemyChaser : MonoBehaviour
     {
         Patrolling = 0,
         Chasing = 1,
-        ComingBack=2,
-        LookingForPlayer=3
+        ComingBack = 2,
+        LookingForPlayer = 3
     }
 
     System.Random rnd;
@@ -102,7 +102,7 @@ public class EnemyChaser : MonoBehaviour
         pathFinderObject = GameObject.FindGameObjectWithTag("Pathfinder");
         grd = pathFinderObject.GetComponent<Grid>().Instance;
         needToChangePoint = false;
-        if(!menuMode)
+        if (!menuMode)
             PlayerPrevPos = grd.GetClosestGoodNode(grd.Nodes, GameObject.FindGameObjectWithTag("Player").transform.position);
         patrolDepartingPosition = transform.position;
         patrolDestination = new Vector2(transform.position.x + patrolXDistance, transform.position.y + patrolYDistance);
@@ -171,14 +171,14 @@ public class EnemyChaser : MonoBehaviour
             }
         }
 
-       
+
 
         initialState = false;
     }
 
     private void patrol()
     {
-      
+
 
         Vector2 origin = transform.position;
         Point gridDestination;
@@ -196,7 +196,7 @@ public class EnemyChaser : MonoBehaviour
 
 
 
-        if ( bc == null)
+        if (bc == null)
         {
             patrolGoingToDestination = !patrolGoingToDestination;
             bc = PathFinder.FindPath(grd, gridPosThisEnemy, gridDestination);
@@ -249,12 +249,12 @@ public class EnemyChaser : MonoBehaviour
                     yDistance = 0;
             }
 
-            
+
 
             Vector2 move = new Vector2(-xDistance, -yDistance);
             currentVector = move;
-            
-            
+
+
             origin = origin + move * speed * Time.deltaTime;
             adjustRotation(move);
             rBody.MovePosition(origin);
@@ -338,7 +338,7 @@ public class EnemyChaser : MonoBehaviour
                 angle = 180;
                 break;
         }
-        origin = origin + move * speed/2 * Time.deltaTime;
+        origin = origin + move * speed / 2 * Time.deltaTime;
         adjustRotation(move);
         rBody.MovePosition(origin);
         //transform.rotation = Quaternion.Euler(0, 0, angle); 
@@ -428,14 +428,14 @@ public class EnemyChaser : MonoBehaviour
                 else
                     yDistance = 0;
             }
-            
+
 
 
             Vector2 move = new Vector2(-xDistance, -yDistance);
             adjustRotation(move);
             origin = origin + move * speedWhileChasing * Time.deltaTime;
             rBody.MovePosition(origin);
-            if ((transform.position.x >= nextPoint.x - 0.01f || transform.position.x <= nextPoint.x + 0.01f) && (transform.position.y >= nextPoint.y-0.01f || transform.position.y <= nextPoint.y + 0.01f))
+            if ((transform.position.x >= nextPoint.x - 0.01f || transform.position.x <= nextPoint.x + 0.01f) && (transform.position.y >= nextPoint.y - 0.01f || transform.position.y <= nextPoint.y + 0.01f))
             {
                 forceNext = true;
             }
@@ -444,25 +444,30 @@ public class EnemyChaser : MonoBehaviour
         }
         else
         {
+
+            Vector2 move = new Vector2(0, -1);
+            adjustRotation(move);
+            origin = origin + move * speedWhileChasing * Time.deltaTime;
+            rBody.MovePosition(origin);
             forceNext = false;
         }
-  
+
 
     }
 
     private void comeBack()
     {
         Vector2 origin = transform.position;
-        Point gridDestination= grd.GetClosestGoodNode(grd.Nodes, patrolDepartingPosition);
+        Point gridDestination = grd.GetClosestGoodNode(grd.Nodes, patrolDepartingPosition);
         Point gridPosThisEnemy = grd.GetClosestGoodNode(grd.Nodes, transform.position);
 
- 
+
 
 
 
         if (bc == null)
         {
-            
+
             bc = PathFinder.FindPath(grd, gridPosThisEnemy, gridDestination);
             needToChangePoint = true;
             firstStep = true;
@@ -564,7 +569,7 @@ public class EnemyChaser : MonoBehaviour
         }
     }
 
-    private int GiveMeANumber(int exclusion,int minim, int maxim)
+    private int GiveMeANumber(int exclusion, int minim, int maxim)
     {
         var exclude = new HashSet<int>() { exclusion };
         var range = Enumerable.Range(minim, maxim).Where(i => !exclude.Contains(i));
@@ -574,32 +579,45 @@ public class EnemyChaser : MonoBehaviour
         return range.ElementAt(index);
     }
 
-
+    //Find the shortest path to reach the target angle
     private void adjustRotation(Vector2 move)
     {
         float angleRot = Vector2.SignedAngle(Vector2.up, move);
         float currentAngle = transform.eulerAngles.z;
+        //Debug.Log("Angulo:" + currentAngle + "  Angulo2:" + angleRot );
         float newAngle;
-        if (angleRot < 0)
-            angleRot += 360;
-        angleRot += 360;
-        if (currentAngle < 0)
-            currentAngle += 360;
-        currentAngle += 360;
-        newAngle = currentAngle;
-        
-        if (currentAngle < angleRot -5)
+        newAngle = currentAngle + 360;
+        float alpha = angleRot - currentAngle;
+        float betta = angleRot - currentAngle + 360;
+        float gamma = angleRot - currentAngle - 360;
+        float smallestAbsolute;
+        if (Mathf.Abs(alpha) < Mathf.Abs(betta))
         {
-            newAngle = currentAngle + adjRotationParam;
-         
+            smallestAbsolute = alpha;
+            if (Mathf.Abs(gamma) < Mathf.Abs(alpha))
+                smallestAbsolute = gamma;
         }
-        else if (currentAngle > angleRot + 5)
+        else
         {
-            newAngle = currentAngle - adjRotationParam;
+            smallestAbsolute = betta;
+            if (Mathf.Abs(gamma) < Mathf.Abs(betta))
+                smallestAbsolute = gamma;
         }
-        
-        //newAngle = currentAngle + 5;
-       // Debug.Log("Angulo:"+ currentAngle +"  Movement:"+ angleRot   +"  New angle: " + newAngle);
+
+
+
+        if (currentAngle < angleRot - 5 || currentAngle > angleRot + 5)
+        {
+            if(smallestAbsolute > 0)
+                //clockwise
+                newAngle = currentAngle + adjRotationParam;
+            else
+                //counterclockwise
+                newAngle = currentAngle - adjRotationParam;
+
+
+        }
+
         Quaternion qua = Quaternion.Euler(0, 0, newAngle);
         //Debug.Log(qua);
         transform.rotation = qua;
