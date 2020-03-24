@@ -905,7 +905,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: PRISON BREAK
+  m_Text: 'Prison: riot escape'
 --- !u!222 &317945621
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3654,7 +3654,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: CAN YOU ESCAPE?
+  m_Text: HIde, crawl and escape
 --- !u!222 &1088494498
 CanvasRenderer:
   m_ObjectHideFlags: 0

@@ -227,7 +227,14 @@ public class EnemyChaser : MonoBehaviour
             }
 
 
-
+            //LineRenderer lr = gameObject.GetComponent<LineRenderer>();
+            //lr.positionCount = 2;  //Need a higher number than 2, or crashes out
+            //lr.startWidth = 0.1f;
+            //lr.endWidth = 0.1f;
+            //lr.startColor = Color.yellow;
+            //lr.endColor = Color.yellow;
+            //lr.SetPosition(0, transform.position);
+            //lr.SetPosition(1, new Vector2(nextPoint.x, nextPoint.y));
 
             float xDistance = transform.position.x - nextPoint.x; //If positive, we need to go left
             float yDistance = transform.position.y - nextPoint.y; //If positive we need to go down
@@ -407,7 +414,14 @@ public class EnemyChaser : MonoBehaviour
             }
 
 
-
+            //LineRenderer lr = gameObject.GetComponent<LineRenderer>();
+            //lr.positionCount = 2;  //Need a higher number than 2, or crashes out
+            //lr.startWidth = 0.1f;
+            //lr.endWidth = 0.1f;
+            //lr.startColor = Color.yellow;
+            //lr.endColor = Color.yellow;
+            //lr.SetPosition(0, transform.position);
+            //lr.SetPosition(1, new Vector2(nextPoint.x,nextPoint.y));
 
             float xDistance = transform.position.x - nextPoint.x; //If positive, we need to go left
             float yDistance = transform.position.y - nextPoint.y; //If positive we need to go down
@@ -605,22 +619,23 @@ public class EnemyChaser : MonoBehaviour
         }
 
 
-
-        if (currentAngle < angleRot - 5 || currentAngle > angleRot + 5)
+        if (angleRot < 0)
+            angleRot += 360;
+        if (Mathf.Abs(currentAngle - angleRot) >5 )
         {
-            if(smallestAbsolute > 0)
+            if (smallestAbsolute > 0)
                 //clockwise
                 newAngle = currentAngle + adjRotationParam;
             else
                 //counterclockwise
                 newAngle = currentAngle - adjRotationParam;
 
-
+            Quaternion qua = Quaternion.Euler(0, 0, newAngle);
+            //Debug.Log(qua);
+            transform.rotation = qua;
         }
 
-        Quaternion qua = Quaternion.Euler(0, 0, newAngle);
-        //Debug.Log(qua);
-        transform.rotation = qua;
+        
     }
 
 

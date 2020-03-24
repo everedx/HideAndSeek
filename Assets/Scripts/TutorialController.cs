@@ -148,11 +148,11 @@ public class TutorialController : MonoBehaviour
                 break;
             case "Escape":
                 guard1.GetComponent<EnemyChaser>().enableFOV();
-                guard2.GetComponent<EnemyChaser>().enableFOV();
+                //guard2.GetComponent<EnemyChaser>().enableFOV();
                 guard1.SetActive(true);
-                guard2.SetActive(true);
+                //guard2.SetActive(true);
                 guard1.GetComponent<EnemyChaser>().setState(0);
-                guard2.GetComponent<EnemyChaser>().setState(0);
+                //guard2.GetComponent<EnemyChaser>().setState(0);
                 cam.GetComponent<CameraShader>().setEnemiesChasing(0);
                 keyExit.SetActive(true);
                 break;
