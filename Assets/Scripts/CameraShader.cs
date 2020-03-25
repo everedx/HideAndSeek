@@ -15,7 +15,7 @@ public class CameraShader : MonoBehaviour
     private bool growing;
     //public float vignetteSize;
     private int enemiesChasing;
-    private Light2D[] lightCharacter;
+    private UnityEngine.Experimental.Rendering.Universal.Light2D[] lightCharacter;
     private float valueColors;
     //Material material;
     [SerializeField] AudioClip audioClip;
@@ -28,7 +28,7 @@ public class CameraShader : MonoBehaviour
         //vignetteSize = 0;
 
         //material = new Material(shader);
-        lightCharacter = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<Light2D>() ;
+        lightCharacter = GameObject.FindGameObjectWithTag("Player").GetComponentsInChildren<UnityEngine.Experimental.Rendering.Universal.Light2D>() ;
         aSource = GameObject.Find("CanvasHero").GetComponent<AudioSource>();
     }
 
@@ -67,7 +67,7 @@ public class CameraShader : MonoBehaviour
                     growing = true;
                 //Debug.Log(vignetteSize);
             }
-            foreach (Light2D l2D in lightCharacter)
+            foreach (UnityEngine.Experimental.Rendering.Universal.Light2D l2D in lightCharacter)
             {
                 l2D.color = new Color(2f, valueColors, valueColors);
             }
@@ -79,7 +79,7 @@ public class CameraShader : MonoBehaviour
                 valueColors = valueColors + Time.deltaTime;
             growing = true;
             //Debug.Log(vignetteSize);
-            foreach (Light2D l2D in lightCharacter)
+            foreach (UnityEngine.Experimental.Rendering.Universal.Light2D l2D in lightCharacter)
             {
                 l2D.color = new Color(1, valueColors, valueColors);
             }

@@ -109,7 +109,7 @@ public class TutorialController : MonoBehaviour
             audioSource.Play();
             if (stringToDisplay[indexDisplayText].Equals(',') || stringToDisplay[indexDisplayText].Equals('.') || stringToDisplay[indexDisplayText].Equals('!'))
             {
-                timerToWait = 1f;
+                timerToWait = 0.5f;
             }
             else
             {
@@ -225,13 +225,23 @@ public class TutorialController : MonoBehaviour
 
     public void startStep()
     {
-        GameObject.Find("GameController").GetComponent<SceneController>().resumeScene();
-        tutoButton.gameObject.SetActive(false);
-        vJoystickTuto1.SetActive(false);
-        vJoystickTuto2.SetActive(false);
-        textComponentInstructions.enabled = false;
-        textComponentInstructions.text = "";
-        showText = false;
+        string s = new string(stringToDisplay);
+        if (s.Equals(textComponentInstructions.text))
+        {
+            GameObject.Find("GameController").GetComponent<SceneController>().resumeScene();
+            tutoButton.gameObject.SetActive(false);
+            vJoystickTuto1.SetActive(false);
+            vJoystickTuto2.SetActive(false);
+            textComponentInstructions.enabled = false;
+            textComponentInstructions.text = "";
+            showText = false;
+        }
+        else
+        {
+            indexDisplayText = stringToDisplay.Length;
+            textComponentInstructions.text = tutorialInstructions[indexTuto];
+        }
+    
     }
 
     public void finishStepInterface()
