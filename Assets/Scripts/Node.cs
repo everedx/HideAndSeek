@@ -23,10 +23,11 @@ public class Node {
 	public NodeConnection BottomRight;
 	
 	GameObject Debug;
-	
+    bool debMode = false;
 	public Node(float x, float y, Vector2 position, Grid grid,bool debugMode)
 	{
 		Initialize(x, y, position, grid,debugMode);
+        debMode = debugMode;
 	}
 	
 	public void Initialize(float x, float y, Vector2 position, Grid grid,bool debugMode)
@@ -72,7 +73,8 @@ public class Node {
 
 	public void SetColor(Color color)
 	{
-        Debug.transform.GetComponent<SpriteRenderer>().color = color;//; Debug
+        if(debMode)
+             Debug.transform.GetComponent<SpriteRenderer>().color = color;//; Debug
 	}
 
 	//Cull nodes if they don't have enough valid connection points (3)

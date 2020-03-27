@@ -19,19 +19,19 @@ MonoBehaviour:
     sceneName: TutorialScene
   - id: Level1
     name: Level1
-    description: Level 1
+    description: 'Difficulty: Easy'
     sceneName: Level1
   - id: Level2
     name: Level2
-    description: TEST
+    description: 'Difficulty: Easy'
     sceneName: Level2
   - id: Level3
     name: Level3
-    description: TEST
+    description: 'Difficulty: Medium'
     sceneName: Level3
   - id: Level4
     name: Level4
-    description: TEST
+    description: 'Difficulty: Medium'
     sceneName: Level4
   - id: Level5
     name: Level5
