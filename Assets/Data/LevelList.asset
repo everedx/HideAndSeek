@@ -35,25 +35,25 @@ MonoBehaviour:
     sceneName: Level4
   - id: Level5
     name: Level5
-    description: TEST
+    description: 'Difficulty: Medium'
     sceneName: Level5
   - id: Level6
     name: Level6
-    description: TEST
+    description: 'Difficulty: Hard'
     sceneName: Level6
   - id: Level7
     name: Level7
-    description: TEST
+    description: 'Difficulty: Hard'
     sceneName: Level7
   - id: Level8
     name: Level8
-    description: TEST
+    description: 'Difficulty: Hard'
     sceneName: Level8
   - id: Level9
     name: Level9
-    description: TEST
+    description: 'Difficulty: Very hard'
     sceneName: Level9
   - id: Level10
     name: Level10
-    description: TEST
+    description: 'Difficulty: Very hard'
     sceneName: Level10

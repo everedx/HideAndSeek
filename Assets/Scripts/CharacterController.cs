@@ -180,6 +180,8 @@ public class CharacterController : MonoBehaviour
         {
             //SFX
             aSource.PlayOneShot(collision.gameObject.GetComponent<keyController>().soundPickUp());
+            //Anim
+            anim.SetTrigger("item");
             //Add Key to inventory (Reference to the door that it opens)
             string doorToOpen = collision.gameObject.GetComponent<keyController>().getDoorThatThisKeyCanOpen();
             if(doorToOpen!= null)

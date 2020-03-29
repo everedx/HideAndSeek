@@ -17,7 +17,12 @@ public class MainCamera : MonoBehaviour
 
     public void onAnimationFinish()
     {
-        GameObject.Find("GameController").GetComponent<SceneController>().resumeScene();
+        Level10Animator animlastLlvl = GameObject.Find("LevelChanger").GetComponent<Level10Animator>();
+        if (animlastLlvl == null)
+        {
+            GameObject.Find("GameController").GetComponent<SceneController>().resumeScene();
+        }
+        
         gameObject.GetComponent<Animator>().enabled = false;
         buttonSkipAnimation.gameObject.SetActive(false);
         stopSequence = true;
@@ -72,6 +77,11 @@ public class MainCamera : MonoBehaviour
         mustExecuteSequence = true;
         nextRequired = true;
         Debug.Log("Start Camera Sequence");
+        Level10Animator animlastLlvl = GameObject.Find("LevelChanger").GetComponent<Level10Animator>();
+        if (animlastLlvl != null)
+        {
+            animlastLlvl.startLastLevelAnim();
+        }
     }
 
 }

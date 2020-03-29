@@ -42,6 +42,7 @@ public class LevelChanger : MonoBehaviour
         //Move camera
         // GameObject.Find("Main Camera").GetComponent<Animator>().SetTrigger("MoveCamera");
         GameObject.Find("Main Camera").GetComponent<MainCamera>().startCameraSequence();
+
     }
 
     public void onFadeInStart()
