@@ -149,7 +149,8 @@ public class EnemyChaser : MonoBehaviour
                         gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, false);
                         adjustRotation(staticViewVector);
                     }
-                    patrol();
+                    else
+                        patrol();
                     prevState = state;
                     break;
                 case States.Chasing:
