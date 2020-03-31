@@ -22,6 +22,10 @@ public class EnemyChaser : MonoBehaviour
     Vector2 staticViewVector;
     bool setStaticSight;
     bool initialState = true;
+    private Animator anim;
+    private float timerAnimations;
+    private float randomAnimSequence;
+    System.Random randomGenerator;
 
     //Chasing mode variables
     GameObject pathFinderObject;
@@ -84,6 +88,10 @@ public class EnemyChaser : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        randomGenerator = new System.Random();
+        timerAnimations = 0;
+        randomAnimSequence = Random.Range(4, 7);
+        anim = gameObject.GetComponent<Animator>();
         movementEnabled = true;
         initialState = true;
         //countChasePath = 0;
@@ -135,6 +143,7 @@ public class EnemyChaser : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         if (movementEnabled)
         {
             switch (state)
@@ -146,33 +155,71 @@ public class EnemyChaser : MonoBehaviour
                     }
                     if (staticEnemy)
                     {
+                        if (anim.GetInteger("state") != 0)
+                        {
+                            anim.SetInteger("state", 0);
+                        }
                         gameObject.GetComponent<EnemySight>().setAngle(staticViewVector, false);
                         adjustRotation(staticViewVector);
                     }
                     else
+                    {
+                        if (anim.GetInteger("state") != 1)
+                        {
+                            anim.SetInteger("state", 1);
+                        }
                         patrol();
+                    }
                     prevState = state;
                     break;
                 case States.Chasing:
                     if (prevState == States.Patrolling || prevState == States.ComingBack)
                         mainCamShader.changeEnemiesChasing(1);
+                    if (anim.GetInteger("state") != 1)
+                    {
+                        anim.SetInteger("state", 1);
+                    }
                     prevState = state;
                     chase();
                     break;
                 case States.ComingBack:
                     if (prevState == States.LookingForPlayer)
                         mainCamShader.changeEnemiesChasing(-1);
+                    if (anim.GetInteger("state") != 1)
+                    {
+                        anim.SetInteger("state", 1);
+                    }
                     prevState = state;
                     comeBack();
                     break;
                 case States.LookingForPlayer:
                     prevState = state;
+                    if (anim.GetInteger("state") != 1)
+                    {
+                        anim.SetInteger("state", 1);
+                    }
                     lookForPlayerRandomly();
                     break;
             }
         }
+        else
+        {
+            if (anim.GetInteger("state") != 0)
+            {
+                anim.SetInteger("state", 0);
+            }
+        }
 
+        timerAnimations += Time.deltaTime;
+        if (timerAnimations > randomAnimSequence)
+        {
+            timerAnimations = 0;
+            if (state == States.LookingForPlayer)
+                anim.SetTrigger("lostChar");
+            anim.SetTrigger("smoke");
 
+            randomAnimSequence = Random.Range(4, 7);
+        }
 
         initialState = false;
     }
